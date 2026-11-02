@@ -1,6 +1,7 @@
 'use client';
 import { Button } from "@/components/tailgrids/core/button";
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
+import Link from "next/link";
 export default function Home() {
   const requests = [
     {
@@ -42,7 +43,7 @@ export default function Home() {
         <div className='flex font-IBMPlexSans text-sm text-white'><Button className='bg-olive-700 w-[110px] h-[40px] rounded-sm cursor-pointer'>ยื่นคำขอใหม่</Button></div>
       </div>
       <div className="flex mt-8 font-IBMPlexSans w-full ">
-        <div className='w-[50%]'>สิทธิ์คงเหลือของฉัน</div><div className='w-[50%] flex justify-end text-gray-400'>1 ม.ค-31 ธ.ค 2569 </div>&nbsp;&nbsp;<div className='flex justify-end text-nowrap text-gray-400 cursor-pointer'>ดูสิทธิ์ทั้งหมด<i className="bi bi-arrow-right"></i></div>
+        <div className='w-[50%]'>สิทธิ์คงเหลือของฉัน</div><div className='w-[50%] flex justify-end text-gray-400'>1 ม.ค-31 ธ.ค 2569 </div>&nbsp;&nbsp;<Link href="/welfare" className='text-nowrap text-gray-400 cursor-pointer'>ดูสิทธิ์ทั้งหมด<i className="bi bi-arrow-right"></i></Link>
       </div>
       <div className="flex gap-4 mt-2 font-IBMPlexSans text-sm ">
         <div className='w-[33%] border py-2 px-6 rounded-md'>
