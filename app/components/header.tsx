@@ -1,13 +1,23 @@
 'use client';
-import Image from "next/image";
 
+import { usePathname } from 'next/navigation';
+
+const pageTitles: Record<string, string> = {
+  '/': 'ภาพรวมสวัสดิการของฉัน',
+  '/welfare': 'สิทธิ์สวัสดิการ',
+  '/withdraw': 'ยื่นคำขอสวัสดิการ',
+  '/status': 'ติดตามสถานะ',
+  '/organization': 'โครงสร้างองค์กร',
+  '/welfare/welfaredetail': 'รายละเอียดสวัสดิการ',
+};
 
 export default function Header() {
+  const pathname = usePathname();
+  const title = pageTitles[pathname] ?? 'ระบบข้อมูลพนักงานและสวัสดิการ';
+
   return (
-    <>
-      <div className='border-b-2 border-gray-300 w-full h-[64px] flex items-center justify-between p-4'>
-        ภาพรวมสวัสดิการของฉัน
-      </div>
-    </>
-  )
+    <div className="border-b-2 border-gray-300 w-full h-[64px] flex items-center justify-between p-4">
+      {title}
+    </div>
+  );
 }
