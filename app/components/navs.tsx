@@ -12,19 +12,19 @@ export default function Navs() {
 
     return (
         <>
-            <div className={`${isCollapsed ? "w-[72px]" : "w-[240px]"} sticky top-0 flex h-screen shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-black px-3 py-4 transition-[width] duration-300`}>
+            <div className={`app-sidebar ${isCollapsed ? "app-sidebar--collapsed" : ""} sticky top-0 flex h-screen shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-slate-200 px-3 py-4 transition-[width] duration-300`}>
                 <div className={`flex items-center gap-3 ${isCollapsed ? "justify-center" : ""}`}>
                     <button
                         type="button"
                         aria-expanded={!isCollapsed}
-                        aria-label={isCollapsed ? "opensidebar" : "closesidebar"}
+                        aria-label={isCollapsed ? "ขยายแถบเมนู" : "ย่อแถบเมนู"}
                         onClick={() => setIsCollapsed((collapsed) => !collapsed)}
-                        className="shrink-0 cursor-pointer"
+                        className="shrink-0 cursor-pointer rounded p-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700"
                     >
                         <MenuHamburger1 size={35} />
                     </button>
                     {!isCollapsed && (
-                        <div className='whitespace text-15 leading-snug font-semibold text-ink'>
+                        <div className='whitespace text-15 leading-snug font-semibold text-ink max-md:hidden'>
                             ระบบข้อมูลพนักงานและสวัสดิการ
                             <hr />
                             <div className='font-IBMPlexSans text-sm text-gray-500'>
@@ -33,7 +33,7 @@ export default function Navs() {
                         </div>
                     )}
                 </div>
-                <div className={`mt-8 flex items-center font-IBMPlexSans text-sm ${isCollapsed ? "justify-center" : "justify-between"}`}>
+                <div className={`mt-8 flex items-center font-IBMPlexSans text-sm ${isCollapsed ? "justify-center" : "justify-between"} max-md:hidden`}>
                     {!isCollapsed && <span className="whitespace-nowrap">พื้นที่ของฉัน</span>}
                     {!isCollapsed && (
                         <button
@@ -66,32 +66,33 @@ export default function Navs() {
                                 key={label}
                                 href={href}
                                 aria-current={isSelected ? "page" : undefined}
+                                aria-label={label}
                                 title={isCollapsed ? label : undefined}
-                                className={`flex h-[37px] w-full cursor-pointer items-center rounded transition-colors ${isCollapsed ? "justify-center" : "gap-2 px-2 text-left"} ${isSelected ? "bg-gray-200" : "hover:bg-gray-100"}`}
+                                className={`flex h-10 w-full cursor-pointer items-center rounded transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700 ${isCollapsed ? "justify-center" : "gap-2 px-2 text-left"} ${isSelected ? "bg-olive-50 text-olive-900" : "text-slate-700 hover:bg-slate-50"} max-md:justify-center max-md:gap-0 max-md:px-0`}
                             >
-                                <Icon size={20} /> {!isCollapsed && label}
+                                <Icon size={20} aria-hidden="true" /> {!isCollapsed && <span className="max-md:hidden">{label}</span>}
                             </Link>;
                         })}
                     </div>
                 </div>
-                <div className={`mt-auto flex min-h-[48px] shrink-0 items-center justify-between border-t border-gray-200 pt-3 font-IBMPlexSans text-sm ${isCollapsed ? "flex-col justify-center gap-3" : ""}`}>
+                <div className={`mt-auto flex min-h-[48px] shrink-0 items-center justify-between border-t border-slate-200 pt-3 font-IBMPlexSans text-sm ${isCollapsed ? "flex-col justify-center gap-3" : ""} max-md:flex-col max-md:justify-center max-md:gap-3`}>
                     <button
                         type="button"
                         aria-label="ออกจากระบบ"
                         title={isCollapsed ? "ออกจากระบบ" : undefined}
-                        className={`flex cursor-pointer items-center rounded px-2 py-1 text-gray-700 transition-colors hover:bg-gray-100 ${isCollapsed ? "justify-center" : "gap-2"}`}
+                        className={`flex cursor-pointer items-center rounded px-2 py-1 text-slate-700 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700 ${isCollapsed ? "justify-center" : "gap-2"} max-md:justify-center`}
                     >
                         <i className="bi bi-box-arrow-right"></i>
-                        {!isCollapsed && <span>ออกจากระบบ</span>}
+                        {!isCollapsed && <span className="max-md:hidden">ออกจากระบบ</span>}
                     </button>
                     <Link href="/profile">
                         <div
-                            className={`flex items-center text-gray-600 ${isCollapsed ? "justify-center" : "gap-2"}`}
+                            className={`flex items-center text-slate-600 ${isCollapsed ? "justify-center" : "gap-2"} max-md:justify-center`}
                             title={isCollapsed ? "โปรไฟล์พนักงาน" : undefined}
                         >
-                            <i className="bi bi-person-circle text-lg"></i>
+                            <i className="bi bi-person-circle text-lg" aria-hidden="true"></i>
                             {!isCollapsed && (
-                                <span className="whitespace-nowrap text-xs">พนักงาน</span>
+                                <span className="whitespace-nowrap text-xs max-md:hidden">พนักงาน</span>
                             )}
                         </div>
                     </Link>

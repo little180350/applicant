@@ -3,20 +3,18 @@
 import "./globals.css";
 import Navs from "./components/navs";
 import Header from "./components/header";
-import Roll from "./components/roll";
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html>
-      <body className="flex">
+      <body className="flex min-h-screen">
         <Navs />
-        <div className="w-full">
+        <div className="min-w-0 flex-1">
           <Header />
-          <main className="p-2 m-2">
+          <main className="m-2 min-w-0 p-2">
             {children}
           </main>
         </div>
-        <Roll />
       </body>
     </html>
   );

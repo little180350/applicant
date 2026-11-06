@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 
 const pageTitles: Record<string, string> = {
   '/': 'ภาพรวมสวัสดิการของฉัน',
+  '/profile/changeprofile': 'ยื่นคำขอเปลี่ยนข้อมูล',
   '/welfare': 'สิทธิ์สวัสดิการ',
   '/withdraw': 'ยื่นคำขอสวัสดิการ',
   '/status': 'ติดตามสถานะ',
