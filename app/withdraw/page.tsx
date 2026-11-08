@@ -3,8 +3,8 @@
 import { useMemo, useState } from 'react';
 
 const steps = [
-    { label: 'กรอกข้อมูล', active: 'กรอกข้อมูลและแนบเอกสาร' },
-    { label: 'ยืนยัน', active: 'ตรวจสอบและส่ง' },
+    { label: 'ข้อมูลพนักงานและคำขอ', active: 'กรอกข้อมูลและแนบเอกสาร' },
+    { label: 'เอกสารและยืนยัน', active: 'ตรวจสอบและส่ง' },
 ];
 
 const initialForm = {

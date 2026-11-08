@@ -193,11 +193,10 @@ export default function HeadEmPage() {
   }
 
   return (
-    <div className="mx-auto min-w-[1080px] max-w-[1480px] bg-white px-4 py-4 text-[#0F172A]">
-
-      <header className="flex items-center justify-between border-b border-[#E2E8F0] pb-4">
+    <div className="mx-auto max-w-[1250px] px-4 py-5 text-[#0F172A]">
+      <header className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-[#0F172A]">
+          <h1 className="text-[29px] font-semibold tracking-[-0.04em] text-[#0F172A]">
             ยื่นคำขอสวัสดิการแทนพนักงาน
           </h1>
           <p className="mt-1 text-sm text-[#64748B]">
@@ -209,16 +208,17 @@ export default function HeadEmPage() {
         </span>
       </header>
 
-      <div className="mt-4 flex items-center rounded-lg border border-[#E2E8F0] bg-white px-4 py-3">
+      <div className="overflow-hidden rounded-xl border border-[#E2E8F0] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+        <div className="flex flex-wrap items-center gap-2 border-b border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-sm">
         {steps.map((step, index) => {
           const isActive = index === currentStep;
           const isComplete = index < currentStep || submitted;
 
           return (
-            <div key={step} className="flex flex-1 items-center gap-2">
+            <div key={step} className="flex items-center gap-2">
               <span
                 className={[
-                  'flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold',
+                  'flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[11px] font-semibold',
                   isComplete
                     ? 'border-[#1D4ED8] bg-[#1D4ED8] text-white'
                     : isActive
@@ -235,14 +235,15 @@ export default function HeadEmPage() {
               <span className={`text-sm ${isActive ? 'font-medium text-[#0F172A]' : 'text-[#64748B]'}`}>
                 {step}
               </span>
-              {index < steps.length - 1 && <span className="mx-4 h-px flex-1 bg-[#E2E8F0]" />}
+              {index < steps.length - 1 && <span className="text-[#94A3B8]">›</span>}
             </div>
           );
         })}
+        </div>
       </div>
 
-      <div className="mt-4 grid grid-cols-[minmax(0,1fr)_340px] items-start gap-5">
-        <section className="rounded-lg border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+      <div className="mt-5 grid items-start gap-6 xl:grid-cols-[minmax(0,1.7fr)_360px]">
+        <section className="rounded-xl border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
           {submitted ? (
             <div className="py-12 text-center">
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#ECFDF5] text-xl font-semibold text-[#166534]">
@@ -523,8 +524,8 @@ export default function HeadEmPage() {
           )}
         </section>
 
-        <aside className="space-y-4">
-          <section className="rounded-lg border border-[#E2E8F0] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+        <aside className="rounded-xl border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+          <section>
             <h2 className="text-base font-semibold text-[#0F172A]">ตรวจสอบก่อนส่ง</h2>
 
             <div className="mt-3 rounded-md border border-[#E2E8F0] bg-[#F8FAFC] p-3">
@@ -558,7 +559,7 @@ export default function HeadEmPage() {
             </div>
           </section>
 
-          <section className="rounded-lg border border-[#E2E8F0] bg-white p-4">
+          <section className="mt-4 border-t border-[#E2E8F0] pt-4">
             <h2 className="text-sm font-semibold text-[#0F172A]">การพิจารณาคำขอ</h2>
             <ol className="mt-3 space-y-3 text-xs text-[#475569]">
               <li className="flex gap-2">
