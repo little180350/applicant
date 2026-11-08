@@ -57,6 +57,7 @@ export default function Navs() {
                             { icon: DashboardSquare1, label: "ภาพรวมสวัสดิการของฉัน", href: '/' },
                             { icon: BoxGift2, label: "สิทธิ์สวัสดิการ", href: "/welfare" },
                             { icon: FileText, label: "ยื่นคำขอสวัสดิการ", href: "/withdraw" },
+                            { icon: UserMultiple4, label: "ยื่นคำขอสวัสดิการแทนพนักงาน", href: "/HeadEm" },
                             { icon: MusicList2, label: "ติดตามสถานะ", href: "/status" },
                             { icon: UserMultiple4, label: "โครงสร้างองค์กร", href: "/organization" },
                         ].map(({ icon: Icon, label, href }) => {

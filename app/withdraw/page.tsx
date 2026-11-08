@@ -27,7 +27,7 @@ const initialForm = {
 
 const policyFieldConfig: Record<string, { title: string; fields: { key: keyof typeof initialForm; label: string; type: 'input' | 'textarea'; placeholder?: string }[] }> = {
     'ค่ารักษาพยาบาล': {
-      title: 'ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
+      title: '2. ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
       fields: [
         { key: 'hospital', label: 'ชื่อสถานพยาบาล / คลินิก', type: 'input', placeholder: 'ระบุชื่อสถานพยาบาล' },
         { key: 'patientName', label: 'ชื่อผู้ป่วย', type: 'input', placeholder: 'ระบุชื่อผู้ป่วย' },
@@ -37,7 +37,7 @@ const policyFieldConfig: Record<string, { title: string; fields: { key: keyof ty
       ],
     },
     'ค่าทันตกรรม': {
-      title: 'ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
+      title: '2. ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
       fields: [
         { key: 'hospital', label: 'ชื่อคลินิก / ทันตแพทย์', type: 'input', placeholder: 'ระบุชื่อคลินิกทันตกรรม' },
         { key: 'patientName', label: 'ชื่อผู้เข้ารับบริการ', type: 'input', placeholder: 'ระบุชื่อผู้ป่วย' },
@@ -47,7 +47,7 @@ const policyFieldConfig: Record<string, { title: string; fields: { key: keyof ty
       ],
     },
     'ตรวจสุขภาพประจำปี': {
-      title: 'ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
+      title: '2. ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
       fields: [
         { key: 'hospital', label: 'ชื่อสถานพยาบาล / คลินิก', type: 'input', placeholder: 'ระบุชื่อสถานพยาบาล' },
         { key: 'treatmentType', label: 'ประเภทการตรวจสุขภาพ', type: 'input', placeholder: 'เช่น ตรวจร่างกายประจำปี' },
@@ -56,7 +56,7 @@ const policyFieldConfig: Record<string, { title: string; fields: { key: keyof ty
       ],
     },
     'ค่าลงทะเบียนอบรม': {
-      title: 'ข้อมูลหลักสูตรและค่าใช้จ่าย',
+      title: '2. ข้อมูลหลักสูตรและค่าใช้จ่าย',
       fields: [
         { key: 'courseName', label: 'ชื่อหลักสูตร / สถาบัน', type: 'input', placeholder: 'ระบุชื่อหลักสูตร' },
         { key: 'treatmentType', label: 'ประเภทหลักสูตร', type: 'input', placeholder: 'เช่น ฝึกอบรม / หลักสูตรออนไลน์' },
@@ -65,7 +65,7 @@ const policyFieldConfig: Record<string, { title: string; fields: { key: keyof ty
       ],
     },
     'ค่ารักษาพยาบาลบุตร': {
-      title: 'ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
+      title: '2. ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย',
       fields: [
         { key: 'patientName', label: 'ชื่อบุตร / ผู้ป่วย', type: 'input', placeholder: 'ระบุชื่อบุตร' },
         { key: 'hospital', label: 'ชื่อสถานพยาบาล / คลินิก', type: 'input', placeholder: 'ระบุชื่อสถานพยาบาล' },
@@ -75,7 +75,7 @@ const policyFieldConfig: Record<string, { title: string; fields: { key: keyof ty
       ],
     },
     'ค่าภูมิคุ้มกันบุตร': {
-      title: 'ข้อมูลวัคซีนและค่าใช้จ่าย',
+      title: '2. ข้อมูลวัคซีนและค่าใช้จ่าย',
       fields: [
         { key: 'patientName', label: 'ชื่อบุตร / ผู้รับบริการ', type: 'input', placeholder: 'ระบุชื่อบุตร' },
         { key: 'vaccineName', label: 'ชื่อวัคซีน', type: 'input', placeholder: 'เช่น วัคซีน MMR, DTaP' },
@@ -185,7 +185,7 @@ export default function WithdrawPage() {
 
                                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
                                     <div className="mb-4">
-                                        <h3 className="text-[18px] font-semibold text-slate-900">
+                                        <h3 className="text-[20px] font-semibold text-slate-900">
                                             {policyFieldConfig[form.policyType]?.title ?? '2. ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย'}
                                         </h3>
                                     </div>
@@ -254,7 +254,7 @@ export default function WithdrawPage() {
                     {currentStep === 1 && (
                         <>
                             <div className="mb-5">
-                                <h2 className="text-[20px] font-semibold text-slate-900">2. เอกสารและยืนยัน</h2>
+                                <h2 className="text-[20px] font-semibold text-slate-900">3. เอกสารและยืนยัน</h2>
                             </div>
 
                             <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4">
@@ -278,6 +278,28 @@ export default function WithdrawPage() {
                             </div>
                         </>
                     )}
+
+                    <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-4">
+                        <button
+                            type="button"
+                            onClick={prevStep}
+                            disabled={currentStep === 0}
+                            className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+                        >
+                            ย้อนกลับ
+                        </button>
+
+                        <div className="flex gap-3">
+                            <button type="button" className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700">บันทึกร่าง</button>
+                            <button
+                                type="button"
+                                onClick={nextStep}
+                                className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-700"
+                            >
+                                {currentStep === 0 ? 'ไปหน้าถัดไป' : 'ส่งคำขอ'}
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <aside className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
@@ -313,28 +335,6 @@ export default function WithdrawPage() {
                         </ul>
                     </div>
                 </aside>
-            </div>
-
-            <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-4">
-                <button
-                    type="button"
-                    onClick={prevStep}
-                    disabled={currentStep === 0}
-                    className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                    ย้อนกลับ
-                </button>
-
-                <div className="flex gap-3">
-                    <button type="button" className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700">บันทึกร่าง</button>
-                    <button
-                        type="button"
-                        onClick={nextStep}
-                        className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-700"
-                    >
-                        {currentStep === 0 ? 'ไปหน้าถัดไป' : 'ส่งคำขอ'}
-                    </button>
-                </div>
             </div>
         </div>
     );

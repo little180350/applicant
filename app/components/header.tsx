@@ -7,6 +7,7 @@ const pageTitles: Record<string, string> = {
   '/profile/changeprofile': 'ยื่นคำขอเปลี่ยนข้อมูล',
   '/welfare': 'สิทธิ์สวัสดิการ',
   '/withdraw': 'ยื่นคำขอสวัสดิการ',
+  '/HeadEm': 'ยื่นคำขอสวัสดิการแทนพนักงาน',
   '/status': 'ติดตามสถานะ',
   '/organization': 'โครงสร้างองค์กร',
   '/welfare/welfaredetail': 'รายละเอียดสวัสดิการ',
