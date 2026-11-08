@@ -70,26 +70,26 @@ export default function WelfarePage() {
     ];
 
     return (
-        <div className="mx-auto max-w-[1280px] space-y-4 px-1 py-3 text-slate-800">
+        <div className="mx-auto max-w-[1280px] space-y-4 px-1 py-3 text-[#0F172A]">
             <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                <div className="flex h-[42px] w-full items-center gap-3 border border-slate-200 bg-white px-3 md:max-w-[760px]">
-                    <Search1 className="text-slate-400" />
+                <div className="flex h-[42px] w-full items-center gap-3 border border-[#E2E8F0] bg-white px-3 md:max-w-[760px]">
+                    <Search1 className="text-[#94A3B8]" />
                     <input
                         type="text"
                         placeholder="ค้นหาสวัสดิการ..."
-                        className="w-full border-0 bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400"
+                        className="w-full border-0 bg-transparent text-sm text-[#334155] outline-none placeholder:text-[#94A3B8]"
                     />
                 </div>
 
-                <div className="rounded border border-slate-200 bg-white">
+                <div className="rounded border border-[#E2E8F0] bg-white">
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="px-4 py-2 text-sm text-slate-700">
+                                <NavigationMenuTrigger className="px-4 py-2 text-sm text-[#334155]">
                                     สิทธิ์ปี 2569
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <NavigationMenuLink className="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50">
+                                    <NavigationMenuLink className="block px-4 py-2 text-sm text-[#475569] hover:bg-[#F8FAFC]">
                                         2569
                                     </NavigationMenuLink>
                                 </NavigationMenuContent>
@@ -104,45 +104,45 @@ export default function WelfarePage() {
                     <Button
                         key={tab}
                         className={index === 0
-                            ? 'border border-sky-200 bg-sky-50 text-sm font-medium text-sky-700 hover:bg-sky-100'
-                            : 'border border-slate-200 bg-white text-sm text-slate-700 hover:bg-slate-50'}
+                            ? 'border border-[#DBEAFE] bg-[#EFF6FF] text-sm font-medium text-[#1D4ED8] hover:bg-[#DBEAFE]'
+                            : 'border border-[#E2E8F0] bg-white text-sm text-[#334155] hover:bg-[#F8FAFC]'}
                     >
                         {tab}
                     </Button>
                 ))}
             </div>
 
-            <div className="text-sm text-slate-500">
-                สิทธิ์ที่คุณใช้ได้ <span className="font-medium text-slate-700">{welfareItems.length}</span> รายการ
+            <div className="text-sm text-[#64748B]">
+                สิทธิ์ที่คุณใช้ได้ <span className="font-medium text-[#334155]">{welfareItems.length}</span> รายการ
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {welfareItems.map((item) => (
-                    <div key={item.title} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.03)] transition duration-200 ease-out hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
+                    <div key={item.title} className="flex h-full flex-col rounded-2xl border border-[#E2E8F0] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.03)] transition duration-200 ease-out hover:-translate-y-0.5 hover:border-[#CBD5E1] hover:shadow-[0_8px_18px_rgba(15,23,42,0.04)]">
                         <div className="flex items-center justify-between">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-100 text-sky-700 ring-1 ring-inset ring-sky-100">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#DBEAFE] text-[#1D4ED8] ring-1 ring-inset ring-sky-100">
                                 <Heart className="h-4 w-4" />
                             </div>
-                            <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 text-[10px] font-medium text-emerald-700">
+                            <span className="rounded-full border border-[#A7F3D0] bg-[#ECFDF5] px-2 py-1 text-[10px] font-medium text-[#166534]">
                                 {item.status}
                             </span>
                         </div>
 
                         <div className="mt-4 space-y-2">
-                            <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500">{item.category}</p>
-                            <p className="text-[1.05rem] font-semibold text-slate-900">{item.title}</p>
-                            <p className="min-h-[2.5rem] text-[13px] leading-5 text-slate-500">{item.description}</p>
+                            <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-[#64748B]">{item.category}</p>
+                            <p className="text-[1.05rem] font-semibold text-[#0F172A]">{item.title}</p>
+                            <p className="min-h-[2.5rem] text-[13px] leading-5 text-[#64748B]">{item.description}</p>
                         </div>
 
-                        <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50/80 p-3">
+                        <div className="mt-4 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC]/80 p-3">
                             <div className="grid grid-cols-2 gap-3 text-sm">
                                 <div>
-                                    <div className="text-[11px] uppercase tracking-[0.08em] text-slate-500">วงเงิน</div>
-                                    <div className="mt-1 font-semibold text-slate-800">{item.amount}</div>
+                                    <div className="text-[11px] uppercase tracking-[0.08em] text-[#64748B]">วงเงิน</div>
+                                    <div className="mt-1 font-semibold text-[#0F172A]">{item.amount}</div>
                                 </div>
                                 <div className="text-right">
-                                    <div className="text-[11px] uppercase tracking-[0.08em] text-slate-500">เหลือ</div>
-                                    <div className="mt-1 font-semibold text-sky-700">{item.remaining}</div>
+                                    <div className="text-[11px] uppercase tracking-[0.08em] text-[#64748B]">เหลือ</div>
+                                    <div className="mt-1 font-semibold text-[#1D4ED8]">{item.remaining}</div>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ export default function WelfarePage() {
                         <div className="mt-auto pt-4">
                             <Link
                                 href={item.href}
-                                className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2.5 text-sm font-medium text-sky-700 transition duration-200 ease-out hover:bg-sky-100"
+                                className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#DBEAFE] bg-[#EFF6FF] px-3 py-2.5 text-sm font-medium text-[#1D4ED8] transition duration-200 ease-out hover:bg-[#DBEAFE]"
                             >
                                 <span>ดูรายละเอียด</span>
                                 <ArrowRight className="h-3.5 w-3.5" />

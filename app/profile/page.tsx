@@ -43,8 +43,8 @@ const statusLabels = {
 
 const statusStyles = {
   pending: "border border-amber-200 bg-amber-50 text-amber-800",
-  approved: "border border-emerald-200 bg-emerald-50 text-emerald-700",
-  draft: "border border-slate-200 bg-slate-100 text-slate-700",
+  approved: "border border-[#A7F3D0] bg-[#ECFDF5] text-[#166534]",
+  draft: "border border-[#E2E8F0] bg-[#EFF6FF] text-[#334155]",
 };
 
 function ProfileField({
@@ -55,11 +55,11 @@ function ProfileField({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
-      <dt className="text-[11px] font-medium uppercase tracking-[0.12em] text-slate-500">
+    <div className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC]/80 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
+      <dt className="text-[11px] font-medium uppercase tracking-[0.12em] text-[#64748B]">
         {label}
       </dt>
-      <dd className="mt-1 text-xs font-medium leading-5 text-slate-800">
+      <dd className="mt-1 text-xs font-medium leading-5 text-[#0F172A]">
         {children}
       </dd>
     </div>
@@ -92,31 +92,31 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="mx-auto max-w-[1500px] px-1 pb-10 pt-2 text-sm text-slate-800">
-      <div className="rounded-[28px] border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-sky-50/80 p-4 shadow-[0_24px_60px_rgba(15,23,42,0.06)]">
-        <header className="flex flex-wrap items-end justify-between gap-4 border-b border-slate-200 pb-4">
+    <div className="mx-auto max-w-[1500px] px-1 pb-10 pt-2 text-sm text-[#0F172A]">
+      <div className="rounded-[28px] border border-[#E2E8F0] bg-gradient-to-br from-slate-50 via-white to-sky-50/80 p-4 shadow-[0_24px_60px_rgba(15,23,42,0.06)]">
+        <header className="flex flex-wrap items-end justify-between gap-4 border-b border-[#E2E8F0] pb-4">
           <div>
-            <div className="mb-1 text-[11px] font-medium uppercase tracking-[0.14em] text-slate-500">
+            <div className="mb-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#64748B]">
               พนักงาน / โปรไฟล์ของฉัน
             </div>
-            <h1 className="text-2xl font-semibold tracking-[-0.04em] text-slate-900">
+            <h1 className="text-2xl font-semibold tracking-[-0.04em] text-[#0F172A]">
               โปรไฟล์ของฉัน
             </h1>
-            <p className="mt-1 text-xs text-slate-600">
+            <p className="mt-1 text-xs text-[#475569]">
               ตรวจสอบข้อมูลส่วนตัวและติดตามคำขอเปลี่ยนแปลงข้อมูลของคุณ
             </p>
           </div>
 
           <Link
             href="/profile/changeprofile"
-            className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-medium text-white transition hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+            className="inline-flex items-center justify-center rounded-xl bg-[#1D4ED8] px-4 py-2.5 text-xs font-medium text-white transition hover:bg-[#1E40AF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
           >
             ยื่นคำขอเปลี่ยนข้อมูล
           </Link>
         </header>
 
-        <aside className="mt-4 flex items-start gap-3 rounded-2xl border border-sky-100 bg-sky-50/80 p-3.5">
-          <span className="mt-0.5 rounded-full bg-white p-1.5 text-sky-700 shadow-sm" aria-hidden="true">
+        <aside className="mt-4 flex items-start gap-3 rounded-2xl border border-[#DBEAFE] bg-[#EFF6FF]/80 p-3.5">
+          <span className="mt-0.5 rounded-full bg-white p-1.5 text-[#1D4ED8] shadow-sm" aria-hidden="true">
             <svg
               className="h-4 w-4"
               viewBox="0 0 24 24"
@@ -129,10 +129,10 @@ export default function ProfilePage() {
             </svg>
           </span>
           <div>
-            <h2 className="text-xs font-semibold text-slate-800">
+            <h2 className="text-xs font-semibold text-[#0F172A]">
               ฝ่ายบุคคลเท่านั้นที่แก้ไขข้อมูลจริงได้
             </h2>
-            <p className="mt-1 text-[11px] leading-5 text-slate-600">
+            <p className="mt-1 text-[11px] leading-5 text-[#475569]">
               คุณสามารถดูข้อมูลและยื่นคำขอเปลี่ยนข้อมูลได้
               แต่ไม่สามารถแก้ไขข้อมูลในโปรไฟล์ได้โดยตรง
             </p>
@@ -140,28 +140,28 @@ export default function ProfilePage() {
         </aside>
 
         <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(260px,0.92fr)]">
-          <section className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
+          <section className="rounded-[24px] border border-[#E2E8F0] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="text-base font-semibold text-slate-900">ข้อมูลส่วนตัว</h2>
-              <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-slate-600">
+              <h2 className="text-base font-semibold text-[#0F172A]">ข้อมูลส่วนตัว</h2>
+              <span className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#475569]">
                 Active
               </span>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-b border-[#E2E8F0] pb-4">
               <div className="flex items-center gap-3">
                 <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-600 to-indigo-600 text-base font-semibold text-white shadow-lg shadow-sky-200">
                   กจ
                 </span>
                 <div>
-                  <p className="text-base font-semibold text-slate-900">กมลชนก ใจดี</p>
-                  <p className="mt-1 text-[11px] text-slate-500">
+                  <p className="text-base font-semibold text-[#0F172A]">กมลชนก ใจดี</p>
+                  <p className="mt-1 text-[11px] text-[#64748B]">
                     EMP-1024 · ฝ่ายการตลาด
                   </p>
                 </div>
               </div>
 
-              <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[10px] font-medium text-slate-600">
+              <span className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-2.5 py-1.5 text-[10px] font-medium text-[#475569]">
                 ดูข้อมูลเท่านั้น
               </span>
             </div>
@@ -193,8 +193,8 @@ export default function ProfilePage() {
           </section>
 
           <div className="grid content-start gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            <section className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-[0_8px_18px_rgba(15,23,42,0.03)]">
-              <h2 className="text-base font-semibold text-slate-900">การแก้ไขล่าสุด</h2>
+            <section className="rounded-[24px] border border-[#E2E8F0] bg-white p-4 shadow-[0_8px_18px_rgba(15,23,42,0.03)]">
+              <h2 className="text-base font-semibold text-[#0F172A]">การแก้ไขล่าสุด</h2>
               <dl className="mt-3 space-y-3">
                 <ProfileField label="วันที่และเวลา">
                   8 มิ.ย. 2569 · 09:42 น.
@@ -203,25 +203,25 @@ export default function ProfilePage() {
                   ศิริพร วัฒนกุล
                 </ProfileField>
               </dl>
-              <div className="mt-3 border-t border-slate-200 pt-3">
-                <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-slate-600">
+              <div className="mt-3 border-t border-[#E2E8F0] pt-3">
+                <span className="rounded-full border border-[#E2E8F0] bg-[#F8FAFC] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#475569]">
                   เจ้าหน้าที่บุคคล (HR)
                 </span>
               </div>
-              <p className="mt-3 text-[11px] leading-5 text-slate-500">
+              <p className="mt-3 text-[11px] leading-5 text-[#64748B]">
                 บันทึกข้อมูลผู้ติดต่อฉุกเฉินตามคำขอ PC-2569-006
               </p>
             </section>
 
-            <section className="rounded-[24px] border border-slate-200 bg-white p-4 shadow-[0_8px_18px_rgba(15,23,42,0.03)]">
-              <h2 className="text-base font-semibold text-slate-900">เมื่อข้อมูลไม่ถูกต้อง</h2>
-              <p className="mt-3 text-xs leading-6 text-slate-600">
+            <section className="rounded-[24px] border border-[#E2E8F0] bg-white p-4 shadow-[0_8px_18px_rgba(15,23,42,0.03)]">
+              <h2 className="text-base font-semibold text-[#0F172A]">เมื่อข้อมูลไม่ถูกต้อง</h2>
+              <p className="mt-3 text-xs leading-6 text-[#475569]">
                 ยื่นคำขอพร้อมเหตุผลและหลักฐานให้ฝ่ายบุคคลตรวจสอบ
                 เมื่อข้อมูลได้รับการตรวจสอบและอนุมัติแล้ว ระบบจะอัปเดตให้
               </p>
               <a
                 href="mailto:hr@example.com"
-                className="mt-3 inline-block text-[11px] font-medium text-sky-700 underline-offset-4 transition hover:text-sky-800 hover:underline"
+                className="mt-3 inline-block text-[11px] font-medium text-[#1D4ED8] underline-offset-4 transition hover:text-[#1E40AF] hover:underline"
               >
                 ติดต่อเพิ่มเติมกับฝ่ายทรัพยากรบุคคล
               </a>
@@ -229,20 +229,20 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        <section className="mt-5 rounded-[24px] border border-slate-200 bg-white p-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
+        <section className="mt-5 rounded-[24px] border border-[#E2E8F0] bg-white p-4 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2 className="text-base font-semibold text-slate-900">คำขอเปลี่ยนข้อมูลของฉัน</h2>
-            <span className="text-[11px] text-slate-500">
+            <h2 className="text-base font-semibold text-[#0F172A]">คำขอเปลี่ยนข้อมูลของฉัน</h2>
+            <span className="text-[11px] text-[#64748B]">
               {requests.length} รายการ · รอตรวจสอบ {requests.filter((request) => request.status === "pending").length} ·
               อนุมัติแล้ว {requests.filter((request) => request.status === "approved").length}
             </span>
           </div>
 
-          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200">
+          <div className="mt-3 overflow-hidden rounded-2xl border border-[#E2E8F0]">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[680px] border-collapse text-left text-xs">
                 <thead>
-                  <tr className="bg-slate-100 text-slate-600">
+                  <tr className="bg-[#EFF6FF] text-[#475569]">
                     <th className="px-3 py-2.5 font-medium">เลขที่คำขอ</th>
                     <th className="px-3 py-2.5 font-medium">ข้อมูลที่เปลี่ยน / วันที่ยื่นคำขอ</th>
                     <th className="px-3 py-2.5 font-medium">สถานะ</th>
@@ -254,12 +254,12 @@ export default function ProfilePage() {
                   {requests.map((request, index) => (
                     <tr
                       key={request.id}
-                      className={index % 2 === 0 ? "bg-white" : "bg-slate-50/60"}
+                      className={index % 2 === 0 ? "bg-white" : "bg-[#F8FAFC]/60"}
                     >
-                      <td className="px-3 py-3 font-semibold text-slate-800">{request.id}</td>
+                      <td className="px-3 py-3 font-semibold text-[#0F172A]">{request.id}</td>
                       <td className="px-3 py-3">
-                        <p className="font-medium text-slate-800">{request.field}</p>
-                        <p className="mt-1 text-[11px] text-slate-400">{request.submittedAt}</p>
+                        <p className="font-medium text-[#0F172A]">{request.field}</p>
+                        <p className="mt-1 text-[11px] text-[#94A3B8]">{request.submittedAt}</p>
                       </td>
                       <td className="px-3 py-3">
                         <span
@@ -268,32 +268,32 @@ export default function ProfilePage() {
                           {statusLabels[request.status]}
                         </span>
                       </td>
-                      <td className="px-3 py-3 text-slate-600">{request.latestUpdate}</td>
+                      <td className="px-3 py-3 text-[#475569]">{request.latestUpdate}</td>
                       <td className="px-3 py-3 text-right">
                         {request.status === "pending" ? (
                           <button
                             type="button"
                             onClick={() => setCancelRequestId(request.id)}
-                            className="whitespace-nowrap rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-[11px] font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                            className="whitespace-nowrap rounded-lg border border-[#CBD5E1] bg-white px-2.5 py-1.5 text-[11px] font-medium text-[#334155] transition hover:bg-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
                           >
                             ยกเลิกคำขอ
                           </button>
                         ) : request.status === "draft" ? (
                           <Link
                             href="/profile/changeprofile"
-                            className="whitespace-nowrap rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-[11px] font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                            className="whitespace-nowrap rounded-lg border border-[#CBD5E1] bg-white px-2.5 py-1.5 text-[11px] font-medium text-[#334155] transition hover:bg-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
                           >
                             แก้ไขฉบับร่าง
                           </Link>
                         ) : (
-                          <span className="text-[11px] text-slate-400">ยกเลิกไม่ได้</span>
+                          <span className="text-[11px] text-[#94A3B8]">ยกเลิกไม่ได้</span>
                         )}
                       </td>
                     </tr>
                   ))}
                   {requests.length === 0 && (
                     <tr>
-                      <td colSpan={5} className="px-3 py-8 text-center text-slate-500">
+                      <td colSpan={5} className="px-3 py-8 text-center text-[#64748B]">
                         ไม่มีคำขอเปลี่ยนข้อมูล
                       </td>
                     </tr>
@@ -307,7 +307,7 @@ export default function ProfilePage() {
 
       {requestToCancel && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#1D4ED8]/40 p-4"
           onClick={(event) => {
             if (event.target === event.currentTarget) setCancelRequestId(null);
           }}
@@ -317,12 +317,12 @@ export default function ProfilePage() {
             aria-modal="true"
             aria-labelledby="cancel-request-title"
             aria-describedby="cancel-request-description"
-            className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_26px_70px_rgba(15,23,42,0.18)]"
+            className="w-full max-w-md rounded-2xl border border-[#E2E8F0] bg-white p-5 shadow-[0_26px_70px_rgba(15,23,42,0.18)]"
           >
-            <h2 id="cancel-request-title" className="text-base font-semibold text-slate-900">
+            <h2 id="cancel-request-title" className="text-base font-semibold text-[#0F172A]">
               ยืนยันการยกเลิกคำขอ
             </h2>
-            <p id="cancel-request-description" className="mt-2 text-sm leading-6 text-slate-600">
+            <p id="cancel-request-description" className="mt-2 text-sm leading-6 text-[#475569]">
               ต้องการยกเลิกคำขอ {requestToCancel.id} ({requestToCancel.field})
               ใช่หรือไม่? เมื่อยืนยันแล้ว คำขอนี้จะถูกนำออกจากรายการ
             </p>
@@ -331,14 +331,14 @@ export default function ProfilePage() {
                 type="button"
                 autoFocus
                 onClick={() => setCancelRequestId(null)}
-                className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                className="rounded-lg border border-[#CBD5E1] bg-white px-3 py-2 text-xs font-medium text-[#334155] transition hover:bg-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
               >
                 กลับ
               </button>
               <button
                 type="button"
                 onClick={cancelRequest}
-                className="rounded-lg bg-slate-900 px-3 py-2 text-xs font-medium text-white transition hover:bg-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
+                className="rounded-lg bg-[#1D4ED8] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#1E40AF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
               >
                 ยืนยันการยกเลิก
               </button>

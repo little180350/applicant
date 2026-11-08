@@ -111,22 +111,14 @@ export default function WithdrawPage() {
     const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
 
     return (
-        <div className="mx-auto max-w-[1250px] px-4 py-5 text-slate-800">
-            <div className="mb-3 text-[12px] text-slate-500">
-                <span>หน้าหลัก</span>
-                <span className="mx-2">/</span>
-                <span>สิทธิ์สวัสดิการ</span>
-                <span className="mx-2">/</span>
-                <span>ยื่นคำขอเบิก</span>
-            </div>
-
+        <div className="mx-auto max-w-[1250px] px-4 py-5 text-[#0F172A]">
             <div className="mb-4">
-                <h1 className="text-[29px] font-semibold tracking-[-0.04em] text-slate-900">ยื่นคำขอวัสดิการ</h1>
-                <p className="mt-1 text-sm text-slate-500">แบบฟอร์มยื่นคำขอเบิกสวัสดิการตามสิทธิ์ของคุณ</p>
+                <h1 className="text-[29px] font-semibold tracking-[-0.04em] text-[#0F172A]">ยื่นคำขอวัสดิการ</h1>
+                <p className="mt-1 text-sm text-[#64748B]">แบบฟอร์มยื่นคำขอเบิกสวัสดิการตามสิทธิ์ของคุณ</p>
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
-                <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-3 text-sm">
+            <div className="overflow-hidden rounded-xl border border-[#E2E8F0] bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+                <div className="flex flex-wrap items-center gap-2 border-b border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-sm">
                     {steps.map((step, index) => {
                         const isActive = index === currentStep;
                         const isComplete = index < currentStep;
@@ -137,13 +129,13 @@ export default function WithdrawPage() {
                                     isComplete
                                         ? 'border-sky-600 bg-sky-600 text-white'
                                         : isActive
-                                            ? 'border-sky-600 bg-sky-100 text-sky-700'
-                                            : 'border-slate-300 bg-white text-slate-500',
+                                            ? 'border-sky-600 bg-[#DBEAFE] text-[#1D4ED8]'
+                                            : 'border-[#CBD5E1] bg-white text-[#64748B]',
                                 ].join(' ')}>
                                     {index + 1}
                                 </div>
-                                <span className={isActive ? 'font-medium text-slate-800' : 'text-slate-500'}>{step.label}</span>
-                                {index < steps.length - 1 && <span className="text-slate-400">›</span>}
+                                <span className={isActive ? 'font-medium text-[#0F172A]' : 'text-[#64748B]'}>{step.label}</span>
+                                {index < steps.length - 1 && <span className="text-[#94A3B8]">›</span>}
                             </div>
                         );
                     })}
@@ -151,41 +143,41 @@ export default function WithdrawPage() {
             </div>
 
             <div className="mt-5 grid gap-6 xl:grid-cols-[minmax(0,1.7fr)_360px]">
-                <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+                <div className="rounded-xl border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
                     {currentStep === 0 && (
                         <>
                             <div className="mb-5">
-                                <h2 className="text-[20px] font-semibold text-slate-900">1. ข้อมูลผู้ยื่น</h2>
-                                <p className="mt-1 text-sm text-slate-500">ข้อมูลส่วนบุคคล และสิทธิ์ที่สามารถเบิกได้</p>
+                                <h2 className="text-[20px] font-semibold text-[#0F172A]">1. ข้อมูลผู้ยื่น</h2>
+                                <p className="mt-1 text-sm text-[#64748B]">ข้อมูลส่วนบุคคล และสิทธิ์ที่สามารถเบิกได้</p>
                             </div>
 
                             <div className="space-y-5">
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                                <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-4">
                                     <div className="grid gap-4 md:grid-cols-2">
                                         <div>
-                                            <label className="mb-2 block text-sm font-medium text-slate-700">รหัสพนักงาน</label>
-                                            <div className="flex h-11 w-full items-center rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-600">
+                                            <label className="mb-2 block text-sm font-medium text-[#334155]">รหัสพนักงาน</label>
+                                            <div className="flex h-11 w-full items-center rounded-lg border border-[#E2E8F0] bg-white px-3 text-sm font-medium text-[#475569]">
                                                 {form.employeeId}
                                             </div>
                                         </div>
                                         <div>
-                                            <label className="mb-2 block text-sm font-medium text-slate-700">สังกัด</label>
-                                            <div className="flex h-11 w-full items-center rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-600">
+                                            <label className="mb-2 block text-sm font-medium text-[#334155]">สังกัด</label>
+                                            <div className="flex h-11 w-full items-center rounded-lg border border-[#E2E8F0] bg-white px-3 text-sm font-medium text-[#475569]">
                                                 {form.department}
                                             </div>
                                         </div>
                                         <div className="md:col-span-2">
-                                            <label className="mb-2 block text-sm font-medium text-slate-700">ชื่อ-นามสกุล</label>
-                                            <div className="flex h-11 w-full items-center rounded-lg border border-slate-200 bg-white px-3 text-sm font-medium text-slate-600">
+                                            <label className="mb-2 block text-sm font-medium text-[#334155]">ชื่อ-นามสกุล</label>
+                                            <div className="flex h-11 w-full items-center rounded-lg border border-[#E2E8F0] bg-white px-3 text-sm font-medium text-[#475569]">
                                                 {form.fullName}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                                <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-4">
                                     <div className="mb-4">
-                                        <h3 className="text-[20px] font-semibold text-slate-900">
+                                        <h3 className="text-[20px] font-semibold text-[#0F172A]">
                                             {policyFieldConfig[form.policyType]?.title ?? '2. ข้อมูลผู้เข้ารับการรักษาและค่าใช้จ่าย'}
                                         </h3>
                                     </div>
@@ -193,11 +185,11 @@ export default function WithdrawPage() {
                                     <div className="space-y-4">
                                         <div className="grid gap-4 md:grid-cols-2">
                                             <div>
-                                                <label className="mb-2 block text-sm font-medium text-slate-700">สิทธิ์สวัสดิการ</label>
+                                                <label className="mb-2 block text-sm font-medium text-[#334155]">สิทธิ์สวัสดิการ</label>
                                                 <select
                                                     value={form.policyType}
                                                     onChange={(e) => setValue('policyType', e.target.value)}
-                                                    className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100"
+                                                    className="h-11 w-full rounded-lg border border-[#E2E8F0] bg-white px-3 text-sm text-[#334155] outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100"
                                                 >
                                                     {['ค่ารักษาพยาบาล', 'ค่าทันตกรรม', 'ตรวจสุขภาพประจำปี', 'ค่าลงทะเบียนอบรม', 'ค่ารักษาพยาบาลบุตร', 'ค่าภูมิคุ้มกันบุตร'].map((option) => (
                                                         <option key={option} value={option}>{option}</option>
@@ -206,11 +198,11 @@ export default function WithdrawPage() {
                                             </div>
 
                                             <div>
-                                                <label className="mb-2 block text-sm font-medium text-slate-700">ประเภทการเบิก</label>
+                                                <label className="mb-2 block text-sm font-medium text-[#334155]">ประเภทการเบิก</label>
                                                 <select
                                                     value={form.claimType}
                                                     onChange={(e) => setValue('claimType', e.target.value)}
-                                                    className="h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100"
+                                                    className="h-11 w-full rounded-lg border border-[#E2E8F0] bg-white px-3 text-sm text-[#334155] outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100"
                                                 >
                                                     {['เบิกตามใบเสร็จ', 'เบิกแบบผู้ป่วยนอก', 'เบิกแบบค่าห้องพัก', 'เบิกแบบยกเว้น'].map((option) => (
                                                         <option key={option} value={option}>{option}</option>
@@ -221,18 +213,18 @@ export default function WithdrawPage() {
 
                                         {((policyFieldConfig[form.policyType] ?? policyFieldConfig['ค่ารักษาพยาบาล']).fields).map((field) => {
                                             const value = form[field.key] ?? '';
-                                            const className = 'h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-700 outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100';
+                                            const className = 'h-11 w-full rounded-lg border border-[#E2E8F0] bg-white px-3 text-sm text-[#334155] outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100';
 
                                             return (
                                                 <div key={field.label}>
-                                                    <label className="mb-2 block text-sm font-medium text-slate-700">{field.label}</label>
+                                                    <label className="mb-2 block text-sm font-medium text-[#334155]">{field.label}</label>
                                                     {field.type === 'textarea' ? (
                                                         <textarea
                                                             value={value}
                                                             onChange={(e) => setValue(field.key, e.target.value)}
                                                             rows={3}
                                                             placeholder={field.placeholder}
-                                                            className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100"
+                                                            className="w-full rounded-lg border border-[#E2E8F0] bg-white px-3 py-2 text-sm text-[#334155] outline-none focus:border-sky-500 focus:ring-3 focus:ring-sky-100"
                                                         />
                                                     ) : (
                                                         <input
@@ -254,47 +246,47 @@ export default function WithdrawPage() {
                     {currentStep === 1 && (
                         <>
                             <div className="mb-5">
-                                <h2 className="text-[20px] font-semibold text-slate-900">3. เอกสารและยืนยัน</h2>
+                                <h2 className="text-[20px] font-semibold text-[#0F172A]">3. เอกสารและยืนยัน</h2>
                             </div>
 
-                            <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-4">
-                                <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white p-3">
+                            <div className="rounded-xl border border-dashed border-[#CBD5E1] bg-[#F8FAFC] p-4">
+                                <div className="flex items-center justify-between rounded-lg border border-[#E2E8F0] bg-white p-3">
                                     <div className="flex items-center gap-3">
-                                        <div className="flex h-9 w-9 items-center justify-center rounded-md bg-slate-100 text-slate-600">PDF</div>
+                                        <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#EFF6FF] text-[#475569]">PDF</div>
                                         <div>
-                                            <div className="text-sm font-medium text-slate-800">{form.invoice}</div>
-                                            <div className="text-xs text-slate-500">แนบใบเสร็จและเอกสารประกอบ</div>
+                                            <div className="text-sm font-medium text-[#0F172A]">{form.invoice}</div>
+                                            <div className="text-xs text-[#64748B]">แนบใบเสร็จและเอกสารประกอบ</div>
                                         </div>
                                     </div>
-                                    <button type="button" className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-600 hover:bg-slate-50">อัปโหลด</button>
+                                    <button type="button" className="rounded-lg border border-[#E2E8F0] bg-white px-3 py-2 text-xs font-medium text-[#475569] hover:bg-[#F8FAFC]">อัปโหลด</button>
                                 </div>
                             </div>
 
-                            <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+                            <div className="mt-5 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-4 text-sm text-[#475569]">
                                 <label className="flex items-start gap-3">
-                                    <input type="checkbox" checked={agreed} onChange={() => setAgreed((prev) => !prev)} className="mt-1 h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500" />
+                                    <input type="checkbox" checked={agreed} onChange={() => setAgreed((prev) => !prev)} className="mt-1 h-4 w-4 rounded border-[#CBD5E1] text-sky-600 focus:ring-sky-500" />
                                     <span>ข้าพเจ้ายืนยันว่าข้อมูลดังกล่าวเป็นความจริงทุกประการ และยินยอมให้บริษัทตรวจสอบข้อมูลตามเงื่อนไขของสวัสดิการ</span>
                                 </label>
                             </div>
                         </>
                     )}
 
-                    <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-4">
+                    <div className="mt-6 flex items-center justify-between border-t border-[#E2E8F0] pt-4">
                         <button
                             type="button"
                             onClick={prevStep}
                             disabled={currentStep === 0}
-                            className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+                            className="rounded-lg border border-[#E2E8F0] bg-white px-5 py-2.5 text-sm font-medium text-[#334155] disabled:cursor-not-allowed disabled:opacity-40"
                         >
                             ย้อนกลับ
                         </button>
 
                         <div className="flex gap-3">
-                            <button type="button" className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700">บันทึกร่าง</button>
+                            <button type="button" className="rounded-lg border border-[#E2E8F0] bg-white px-5 py-2.5 text-sm font-medium text-[#334155]">บันทึกร่าง</button>
                             <button
                                 type="button"
                                 onClick={nextStep}
-                                className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-700"
+                                className="rounded-lg bg-[#1D4ED8] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#1E40AF]"
                             >
                                 {currentStep === 0 ? 'ไปหน้าถัดไป' : 'ส่งคำขอ'}
                             </button>
@@ -302,32 +294,32 @@ export default function WithdrawPage() {
                     </div>
                 </div>
 
-                <aside className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+                <aside className="rounded-xl border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
                     <div className="mb-4">
-                        <h3 className="text-[20px] font-semibold text-slate-900">ตรวจสอบก่อนส่ง</h3>
+                        <h3 className="text-[20px] font-semibold text-[#0F172A]">ตรวจสอบก่อนส่ง</h3>
                     </div>
 
-                    <div className="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm">
+                    <div className="space-y-3 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-4 text-sm">
                         <div className="flex items-center justify-between gap-3">
                             <div>
-                                <div className="text-[11px] uppercase tracking-[0.08em] text-slate-500">สิทธิ์</div>
-                                <div className="mt-1 font-medium text-slate-800">{form.policyType}</div>
+                                <div className="text-[11px] uppercase tracking-[0.08em] text-[#64748B]">สิทธิ์</div>
+                                <div className="mt-1 font-medium text-[#0F172A]">{form.policyType}</div>
                             </div>
-                            <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 text-[10px] font-medium text-emerald-700">ใช้สิทธิ์ได้</span>
+                            <span className="rounded-full border border-[#A7F3D0] bg-[#ECFDF5] px-2 py-1 text-[10px] font-medium text-[#166534]">ใช้สิทธิ์ได้</span>
                         </div>
 
-                        <div className="space-y-2 border-t border-slate-200 pt-3">
+                        <div className="space-y-2 border-t border-[#E2E8F0] pt-3">
                             {summaryItems.map((item) => (
                                 <div key={item.label} className="flex items-center justify-between gap-3 text-sm">
-                                    <span className="text-slate-500">{item.label}</span>
-                                    <span className="font-medium text-slate-800">{item.value}</span>
+                                    <span className="text-[#64748B]">{item.label}</span>
+                                    <span className="font-medium text-[#0F172A]">{item.value}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="mt-5 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
-                        <div className="font-medium text-slate-800">เงื่อนไข</div>
+                    <div className="mt-5 rounded-xl border border-[#E2E8F0] bg-white p-4 text-sm text-[#475569]">
+                        <div className="font-medium text-[#0F172A]">เงื่อนไข</div>
                         <ul className="mt-3 space-y-2">
                             <li>• ต้องแนบหลักฐานการเบิกให้ครบถ้วน</li>
                             <li>• วงเงินที่เหลือจะปรับตามคำขอปัจจุบัน</li>

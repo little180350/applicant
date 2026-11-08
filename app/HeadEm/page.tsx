@@ -193,28 +193,23 @@ export default function HeadEmPage() {
   }
 
   return (
-    <div className="mx-auto min-w-[1080px] max-w-[1480px] px-4 py-4 text-slate-800">
-      <div className="mb-3 text-xs text-slate-500">
-        <span>หน้าหลัก</span>
-        <span className="mx-2">/</span>
-        <span>ยื่นคำขอสวัสดิการแทนพนักงาน</span>
-      </div>
+    <div className="mx-auto min-w-[1080px] max-w-[1480px] bg-white px-4 py-4 text-[#0F172A]">
 
-      <header className="flex items-center justify-between border-b border-slate-200 pb-4">
+      <header className="flex items-center justify-between border-b border-[#E2E8F0] pb-4">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
+          <h1 className="text-2xl font-semibold tracking-tight text-[#0F172A]">
             ยื่นคำขอสวัสดิการแทนพนักงาน
           </h1>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-[#64748B]">
             เลือกพนักงาน ตรวจสอบสิทธิ์ และส่งคำขอพร้อมเอกสารประกอบ
           </p>
         </div>
-        <span className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600">
+        <span className="rounded-full border border-[#DBEAFE] bg-[#EFF6FF] px-3 py-1.5 text-xs font-medium text-[#1D4ED8]">
           หัวหน้างาน · ยื่นแทน
         </span>
       </header>
 
-      <div className="mt-4 flex items-center rounded-lg border border-slate-200 bg-white px-4 py-3">
+      <div className="mt-4 flex items-center rounded-lg border border-[#E2E8F0] bg-white px-4 py-3">
         {steps.map((step, index) => {
           const isActive = index === currentStep;
           const isComplete = index < currentStep || submitted;
@@ -225,10 +220,10 @@ export default function HeadEmPage() {
                 className={[
                   'flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-xs font-semibold',
                   isComplete
-                    ? 'border-slate-800 bg-slate-800 text-white'
+                    ? 'border-[#1D4ED8] bg-[#1D4ED8] text-white'
                     : isActive
-                      ? 'border-slate-700 bg-slate-100 text-slate-900'
-                      : 'border-slate-300 bg-white text-slate-500',
+                      ? 'border-[#3B82F6] bg-[#DBEAFE] text-[#1E40AF]'
+                      : 'border-[#CBD5E1] bg-white text-[#64748B]',
                 ].join(' ')}
               >
               {isComplete ? (
@@ -237,48 +232,48 @@ export default function HeadEmPage() {
                 </svg>
               ) : index + 1}
               </span>
-              <span className={`text-sm ${isActive ? 'font-medium text-slate-900' : 'text-slate-500'}`}>
+              <span className={`text-sm ${isActive ? 'font-medium text-[#0F172A]' : 'text-[#64748B]'}`}>
                 {step}
               </span>
-              {index < steps.length - 1 && <span className="mx-4 h-px flex-1 bg-slate-200" />}
+              {index < steps.length - 1 && <span className="mx-4 h-px flex-1 bg-[#E2E8F0]" />}
             </div>
           );
         })}
       </div>
 
       <div className="mt-4 grid grid-cols-[minmax(0,1fr)_340px] items-start gap-5">
-        <section className="rounded-lg border border-slate-200 bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+        <section className="rounded-lg border border-[#E2E8F0] bg-white p-5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
           {submitted ? (
             <div className="py-12 text-center">
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-xl font-semibold text-emerald-800">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#ECFDF5] text-xl font-semibold text-[#166534]">
                 <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 20 20" fill="none">
                   <path d="m4.5 10 3.5 3.5 7.5-7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h2 className="mt-4 text-lg font-semibold text-slate-900">ส่งคำขอเรียบร้อยแล้ว</h2>
-              <p className="mt-2 text-sm text-slate-600">
+              <h2 className="mt-4 text-lg font-semibold text-[#0F172A]">ส่งคำขอเรียบร้อยแล้ว</h2>
+              <p className="mt-2 text-sm text-[#475569]">
                 คำขอของ {employee.name} ถูกส่งให้ฝ่ายบุคคลตรวจสอบแล้ว
               </p>
-              <p className="mt-1 text-xs text-slate-500">สามารถติดตามผลได้ที่เมนู “ติดตามสถานะ”</p>
+              <p className="mt-1 text-xs text-[#64748B]">สามารถติดตามผลได้ที่เมนู “ติดตามสถานะ”</p>
             </div>
           ) : (
             <>
               {currentStep === 0 ? (
                 <>
                   <div className="mb-5">
-                    <h2 className="text-lg font-semibold text-slate-900">ข้อมูลพนักงานและคำขอ</h2>
-                    <p className="mt-1 text-sm text-slate-500">ตรวจสอบข้อมูลผู้รับสิทธิ์ก่อนกรอกรายละเอียดการเบิก</p>
+                    <h2 className="text-lg font-semibold text-[#0F172A]">ข้อมูลพนักงานและคำขอ</h2>
+                    <p className="mt-1 text-sm text-[#64748B]">ตรวจสอบข้อมูลผู้รับสิทธิ์ก่อนกรอกรายละเอียดการเบิก</p>
                   </div>
 
-                  <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-                    <label htmlFor="employee" className="mb-2 block text-sm font-medium text-slate-700">
-                      เลือกพนักงานผู้รับสิทธิ์ <span className="text-rose-600">*</span>
+                  <div className="rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-4">
+                    <label htmlFor="employee" className="mb-2 block text-sm font-medium text-[#334155]">
+                      เลือกพนักงานผู้รับสิทธิ์ <span className="text-[#DC2626]">*</span>
                     </label>
                     <select
                       id="employee"
                       value={employeeId}
                       onChange={(event) => setEmployeeId(event.target.value)}
-                      className="h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none focus:border-slate-600 focus:ring-2 focus:ring-slate-100"
+                      className="h-10 w-full rounded-md border border-[#CBD5E1] bg-white px-3 text-sm text-[#0F172A] outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#DBEAFE]"
                     >
                       {employees.map((item) => (
                         <option key={item.id} value={item.id}>
@@ -287,35 +282,35 @@ export default function HeadEmPage() {
                       ))}
                     </select>
 
-                    <div className="mt-3 grid grid-cols-3 gap-3 rounded-md border border-slate-200 bg-white p-3">
+                    <div className="mt-3 grid grid-cols-3 gap-3 rounded-md border border-[#E2E8F0] bg-white p-3">
                       <div>
-                        <p className="text-xs text-slate-500">ชื่อ-นามสกุล</p>
-                        <p className="mt-1 text-sm font-medium text-slate-800">{employee.name}</p>
+                        <p className="text-xs text-[#64748B]">ชื่อ-นามสกุล</p>
+                        <p className="mt-1 text-sm font-medium text-[#0F172A]">{employee.name}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-slate-500">รหัสพนักงาน</p>
-                        <p className="mt-1 text-sm font-medium text-slate-800">{employee.id}</p>
+                        <p className="text-xs text-[#64748B]">รหัสพนักงาน</p>
+                        <p className="mt-1 text-sm font-medium text-[#0F172A]">{employee.id}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-slate-500">หน่วยงาน</p>
-                        <p className="mt-1 text-sm font-medium text-slate-800">{employee.department}</p>
+                        <p className="text-xs text-[#64748B]">หน่วยงาน</p>
+                        <p className="mt-1 text-sm font-medium text-[#0F172A]">{employee.department}</p>
                       </div>
                     </div>
-                    <p className="mt-2 text-xs text-slate-500">ตำแหน่ง: {employee.position}</p>
+                    <p className="mt-2 text-xs text-[#64748B]">ตำแหน่ง: {employee.position}</p>
                   </div>
 
-                  <div className="mt-4 border-t border-slate-200 pt-4">
-                    <h3 className="text-base font-semibold text-slate-900">ข้อมูลคำขอสวัสดิการ</h3>
+                  <div className="mt-4 border-t border-[#E2E8F0] pt-4">
+                    <h3 className="text-base font-semibold text-[#0F172A]">ข้อมูลคำขอสวัสดิการ</h3>
                     <div className="mt-3 grid grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="benefit" className="mb-1.5 block text-sm font-medium text-slate-700">
-                          ประเภทสวัสดิการ <span className="text-rose-600">*</span>
+                        <label htmlFor="benefit" className="mb-1.5 block text-sm font-medium text-[#334155]">
+                          ประเภทสวัสดิการ <span className="text-[#DC2626]">*</span>
                         </label>
                         <select
                           id="benefit"
                           value={benefitName}
                           onChange={(event) => setBenefitName(event.target.value)}
-                          className="h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none focus:border-slate-600 focus:ring-2 focus:ring-slate-100"
+                          className="h-10 w-full rounded-md border border-[#CBD5E1] bg-white px-3 text-sm text-[#0F172A] outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#DBEAFE]"
                         >
                           {benefits.map((item) => (
                             <option key={item.name} value={item.name}>{item.name}</option>
@@ -324,12 +319,12 @@ export default function HeadEmPage() {
                       </div>
                       {fields.map((field) => {
                         const fieldId = `request-${field.key}`;
-                        const className = 'h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none focus:border-slate-600 focus:ring-2 focus:ring-slate-100';
+                        const className = 'h-10 w-full rounded-md border border-[#CBD5E1] bg-white px-3 text-sm text-[#0F172A] outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#DBEAFE]';
 
                         return (
                           <div key={field.key} className={field.wide || field.key === 'amount' ? 'col-span-2' : undefined}>
-                            <label htmlFor={fieldId} className="mb-1.5 block text-sm font-medium text-slate-700">
-                              {field.label} <span className="text-rose-600">*</span>
+                            <label htmlFor={fieldId} className="mb-1.5 block text-sm font-medium text-[#334155]">
+                              {field.label} <span className="text-[#DC2626]">*</span>
                             </label>
                             {field.type === 'textarea' ? (
                               <textarea
@@ -338,7 +333,7 @@ export default function HeadEmPage() {
                                 value={currentFormData[field.key] ?? ''}
                                 onChange={(event) => setFieldValue(field.key, event.target.value)}
                                 placeholder={field.placeholder}
-                                className="w-full resize-none rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-slate-600 focus:ring-2 focus:ring-slate-100"
+                                className="w-full resize-none rounded-md border border-[#CBD5E1] bg-white px-3 py-2 text-sm text-[#0F172A] outline-none placeholder:text-[#94A3B8] focus:border-[#3B82F6] focus:ring-2 focus:ring-[#DBEAFE]"
                               />
                             ) : field.type === 'select' ? (
                               <select
@@ -353,14 +348,14 @@ export default function HeadEmPage() {
                                 ))}
                               </select>
                             ) : field.type === 'number' ? (
-                              <div className="flex h-10 items-center rounded-md border border-slate-300 bg-white focus-within:border-slate-600 focus-within:ring-2 focus-within:ring-slate-100">
+                              <div className="flex h-10 items-center rounded-md border border-[#CBD5E1] bg-white focus-within:border-[#3B82F6] focus-within:ring-2 focus-within:ring-[#DBEAFE]">
                                 <input
                                   id={fieldId}
                                   value={currentFormData[field.key] ?? ''}
                                   onChange={(event) => setFieldValue(field.key, event.target.value)}
-                                  className="h-full min-w-0 flex-1 rounded-md bg-transparent px-3 text-sm text-slate-800 outline-none"
+                                  className="h-full min-w-0 flex-1 rounded-md bg-transparent px-3 text-sm text-[#0F172A] outline-none"
                                 />
-                                <span className="px-3 text-sm text-slate-500">บาท</span>
+                                <span className="px-3 text-sm text-[#64748B]">บาท</span>
                               </div>
                             ) : (
                               <input
@@ -373,7 +368,7 @@ export default function HeadEmPage() {
                               />
                             )}
                             {field.key === 'amount' && amountExceedsBalance && (
-                              <p className="mt-1 text-xs text-rose-700">
+                              <p className="mt-1 text-xs text-[#DC2626]">
                                 ยอดเบิกเกินวงเงินคงเหลือ {formatAmount(benefit.remaining)} บาท
                               </p>
                             )}
@@ -386,23 +381,23 @@ export default function HeadEmPage() {
               ) : (
                 <>
                   <div className="mb-5">
-                    <h2 className="text-lg font-semibold text-slate-900">เอกสารและยืนยันคำขอ</h2>
-                    <p className="mt-1 text-sm text-slate-500">แนบหลักฐานการเบิกและตรวจสอบข้อมูลก่อนส่ง</p>
+                    <h2 className="text-lg font-semibold text-[#0F172A]">เอกสารและยืนยันคำขอ</h2>
+                    <p className="mt-1 text-sm text-[#64748B]">แนบหลักฐานการเบิกและตรวจสอบข้อมูลก่อนส่ง</p>
                   </div>
 
-                  <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-5 text-center">
-                    <p className="mb-1 text-sm font-medium text-slate-800">
-                      เอกสารประกอบคำขอ <span className="text-rose-600">*</span>
+                  <div className="rounded-lg border border-dashed border-[#CBD5E1] bg-[#F8FAFC] p-5 text-center">
+                    <p className="mb-1 text-sm font-medium text-[#0F172A]">
+                      เอกสารประกอบคำขอ <span className="text-[#DC2626]">*</span>
                     </p>
                     <label
                       htmlFor="documents"
-                      className="flex cursor-pointer flex-col items-center rounded-md px-4 py-6 text-sm text-slate-600 hover:bg-white"
+                      className="flex cursor-pointer flex-col items-center rounded-md px-4 py-6 text-sm text-[#475569] hover:bg-white"
                     >
-                      <svg aria-hidden="true" className="mb-2 h-6 w-6 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+                      <svg aria-hidden="true" className="mb-2 h-6 w-6 text-[#64748B]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
                         <path d="M12 16V4m0 0L8 8m4-4 4 4M5 14v5h14v-5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <span className="font-medium text-slate-800">เลือกไฟล์เพื่ออัปโหลด</span>
-                      <span className="mt-1 text-xs text-slate-500">รองรับ PDF, JPG, PNG ขนาดไม่เกิน 10 MB ต่อไฟล์</span>
+                      <span className="font-medium text-[#0F172A]">เลือกไฟล์เพื่ออัปโหลด</span>
+                      <span className="mt-1 text-xs text-[#64748B]">รองรับ PDF, JPG, PNG ขนาดไม่เกิน 10 MB ต่อไฟล์</span>
                     </label>
                     <input
                       id="documents"
@@ -415,20 +410,20 @@ export default function HeadEmPage() {
                   </div>
 
                   {files.length > 0 && (
-                    <ul className="mt-3 divide-y divide-slate-200 rounded-md border border-slate-200">
+                    <ul className="mt-3 divide-y divide-[#E2E8F0] rounded-md border border-[#E2E8F0]">
                       {files.map((file, index) => (
                         <li key={`${file.name}-${index}`} className="flex items-center justify-between px-3 py-2.5">
                           <div className="flex items-center gap-2">
-                            <span className="rounded bg-slate-100 px-2 py-1 text-[10px] font-semibold text-slate-600">
+                            <span className="rounded bg-[#EFF6FF] px-2 py-1 text-[10px] font-semibold text-[#475569]">
                               {file.name.split('.').pop()?.toUpperCase() ?? 'FILE'}
                             </span>
-                            <span className="text-sm text-slate-700">{file.name}</span>
-                            <span className="text-xs text-slate-500">{(file.size / 1024 / 1024).toFixed(2)} MB</span>
+                            <span className="text-sm text-[#334155]">{file.name}</span>
+                            <span className="text-xs text-[#64748B]">{(file.size / 1024 / 1024).toFixed(2)} MB</span>
                           </div>
                           <button
                             type="button"
                             onClick={() => setFiles((currentFiles) => currentFiles.filter((_, fileIndex) => fileIndex !== index))}
-                            className="rounded px-2 py-1 text-xs text-slate-500 hover:bg-slate-100 hover:text-rose-700 focus-visible:outline-2 focus-visible:outline-slate-700"
+                            className="rounded px-2 py-1 text-xs text-[#64748B] hover:bg-[#EFF6FF] hover:text-[#DC2626] focus-visible:outline-2 focus-visible:outline-[#1D4ED8]"
                           >
                             ลบ
                           </button>
@@ -437,21 +432,21 @@ export default function HeadEmPage() {
                     </ul>
                   )}
 
-                  <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
-                    <h3 className="text-sm font-semibold text-slate-800">ตรวจสอบคำขอ</h3>
+                  <div className="mt-4 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-4">
+                    <h3 className="text-sm font-semibold text-[#0F172A]">ตรวจสอบคำขอ</h3>
                     <dl className="mt-3 grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
                       <div>
-                        <dt className="text-xs text-slate-500">พนักงานผู้รับสิทธิ์</dt>
-                        <dd className="mt-1 font-medium text-slate-800">{employee.name} · {employee.id}</dd>
+                        <dt className="text-xs text-[#64748B]">พนักงานผู้รับสิทธิ์</dt>
+                        <dd className="mt-1 font-medium text-[#0F172A]">{employee.name} · {employee.id}</dd>
                       </div>
                       <div>
-                        <dt className="text-xs text-slate-500">ประเภทสวัสดิการ</dt>
-                        <dd className="mt-1 font-medium text-slate-800">{benefit.name}</dd>
+                        <dt className="text-xs text-[#64748B]">ประเภทสวัสดิการ</dt>
+                        <dd className="mt-1 font-medium text-[#0F172A]">{benefit.name}</dd>
                       </div>
                       {fields.map((field) => (
                         <div key={field.key} className={field.wide ? 'col-span-2' : undefined}>
-                          <dt className="text-xs text-slate-500">{field.label}</dt>
-                          <dd className="mt-1 whitespace-pre-wrap font-medium text-slate-800">
+                          <dt className="text-xs text-[#64748B]">{field.label}</dt>
+                          <dd className="mt-1 whitespace-pre-wrap font-medium text-[#0F172A]">
                             {field.key === 'amount'
                               ? `${formatAmount(requestedAmount)} บาท`
                               : currentFormData[field.key] || 'ยังไม่ได้ระบุ'}
@@ -461,12 +456,12 @@ export default function HeadEmPage() {
                     </dl>
                   </div>
 
-                  <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-700">
+                  <label className="mt-4 flex cursor-pointer items-start gap-3 rounded-lg border border-[#E2E8F0] bg-white p-4 text-sm text-[#334155]">
                     <input
                       type="checkbox"
                       checked={agreed}
                       onChange={(event) => setAgreed(event.target.checked)}
-                      className="mt-0.5 h-4 w-4 rounded border-slate-300 accent-slate-800 focus:ring-slate-700"
+                      className="mt-0.5 h-4 w-4 rounded border-[#CBD5E1] accent-[#1D4ED8] focus:ring-[#DBEAFE]"
                     />
                     <span>ข้าพเจ้ายืนยันว่าข้อมูลและเอกสารประกอบถูกต้องครบถ้วน และได้รับอนุญาตให้ยื่นคำขอแทนพนักงานรายนี้</span>
                   </label>
@@ -474,17 +469,17 @@ export default function HeadEmPage() {
               )}
 
               {formError && (
-                <p role="alert" className="mt-4 rounded-md border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-800">
+                <p role="alert" className="mt-4 rounded-md border border-[#FECACA] bg-[#FEF2F2] px-3 py-2 text-sm text-rose-800">
                   {formError}
                 </p>
               )}
               {draftSaved && (
-                <p role="status" className="mt-4 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+                <p role="status" className="mt-4 rounded-md border border-[#A7F3D0] bg-[#ECFDF5] px-3 py-2 text-sm text-[#166534]">
                   บันทึกฉบับร่างไว้ในหน้านี้แล้ว
                 </p>
               )}
 
-              <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-4">
+              <div className="mt-6 flex items-center justify-between border-t border-[#E2E8F0] pt-4">
                 <button
                   type="button"
                   onClick={() => {
@@ -492,7 +487,7 @@ export default function HeadEmPage() {
                     setCurrentStep(0);
                   }}
                   disabled={currentStep === 0}
-                  className="rounded-md border border-slate-300 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="rounded-md border border-[#CBD5E1] bg-white px-4 py-2.5 text-sm font-medium text-[#334155] hover:bg-[#F8FAFC] disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   ย้อนกลับ
                 </button>
@@ -500,7 +495,7 @@ export default function HeadEmPage() {
                   <button
                     type="button"
                     onClick={() => setDraftSaved(true)}
-                    className="rounded-md border border-slate-300 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                    className="rounded-md border border-[#CBD5E1] bg-white px-4 py-2.5 text-sm font-medium text-[#334155] hover:bg-[#F8FAFC]"
                   >
                     บันทึกร่าง
                   </button>
@@ -508,7 +503,7 @@ export default function HeadEmPage() {
                     <button
                       type="button"
                       onClick={continueToDocuments}
-                      className="rounded-md bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
+                      className="rounded-md bg-[#1D4ED8] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#1E40AF] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D4ED8]"
                     >
                       ไปขั้นตอนถัดไป
                     </button>
@@ -517,7 +512,7 @@ export default function HeadEmPage() {
                       type="button"
                       onClick={submitRequest}
                       disabled={!agreed}
-                      className="rounded-md bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700"
+                      className="rounded-md bg-[#1D4ED8] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#1E40AF] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D4ED8]"
                     >
                       ส่งคำขอแทนพนักงาน
                     </button>
@@ -529,32 +524,32 @@ export default function HeadEmPage() {
         </section>
 
         <aside className="space-y-4">
-          <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
-            <h2 className="text-base font-semibold text-slate-900">ตรวจสอบก่อนส่ง</h2>
+          <section className="rounded-lg border border-[#E2E8F0] bg-white p-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+            <h2 className="text-base font-semibold text-[#0F172A]">ตรวจสอบก่อนส่ง</h2>
 
-            <div className="mt-3 rounded-md border border-slate-200 bg-slate-50 p-3">
-              <span className="rounded bg-emerald-100 px-2 py-1 text-[11px] font-medium text-emerald-900">ใช้สิทธิ์ได้</span>
+            <div className="mt-3 rounded-md border border-[#E2E8F0] bg-[#F8FAFC] p-3">
+              <span className="rounded bg-[#DCFCE7] px-2 py-1 text-[11px] font-medium text-[#166534]">ใช้สิทธิ์ได้</span>
               <dl className="mt-3 space-y-3 text-sm">
                 <div>
-                  <dt className="text-xs text-slate-500">พนักงานผู้รับสิทธิ์</dt>
-                  <dd className="mt-1 font-medium text-slate-800">{employee.name} · {employee.id}</dd>
-                  <dd className="mt-0.5 text-xs text-slate-500">{employee.department}</dd>
+                  <dt className="text-xs text-[#64748B]">พนักงานผู้รับสิทธิ์</dt>
+                  <dd className="mt-1 font-medium text-[#0F172A]">{employee.name} · {employee.id}</dd>
+                  <dd className="mt-0.5 text-xs text-[#64748B]">{employee.department}</dd>
                 </div>
-                <div className="border-t border-slate-200 pt-3">
-                  <dt className="text-xs text-slate-500">สิทธิ์สวัสดิการ</dt>
-                  <dd className="mt-1 font-medium text-slate-800">{benefit.name}</dd>
+                <div className="border-t border-[#E2E8F0] pt-3">
+                  <dt className="text-xs text-[#64748B]">สิทธิ์สวัสดิการ</dt>
+                  <dd className="mt-1 font-medium text-[#0F172A]">{benefit.name}</dd>
                 </div>
                 {summaryItems.map((item) => (
                   <div key={item.label} className="flex items-start justify-between gap-3">
-                    <dt className="text-xs text-slate-500">{item.label}</dt>
-                    <dd className="text-right text-xs font-semibold tabular-nums text-slate-800">{item.value}</dd>
+                    <dt className="text-xs text-[#64748B]">{item.label}</dt>
+                    <dd className="text-right text-xs font-semibold tabular-nums text-[#0F172A]">{item.value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
 
-            <div className="mt-4 rounded-md border border-slate-200 p-3 text-xs leading-5 text-slate-600">
-              <h3 className="font-semibold text-slate-800">เงื่อนไขการยื่นแทน</h3>
+            <div className="mt-4 rounded-md border border-[#E2E8F0] p-3 text-xs leading-5 text-[#475569]">
+              <h3 className="font-semibold text-[#0F172A]">เงื่อนไขการยื่นแทน</h3>
               <ul className="mt-2 list-disc space-y-1 pl-4">
                 <li>ตรวจสอบข้อมูลพนักงานและวงเงินก่อนส่งคำขอ</li>
                 <li>แนบหลักฐานการเบิกให้ครบถ้วนและอ่านได้ชัดเจน</li>
@@ -563,19 +558,19 @@ export default function HeadEmPage() {
             </div>
           </section>
 
-          <section className="rounded-lg border border-slate-200 bg-white p-4">
-            <h2 className="text-sm font-semibold text-slate-900">การพิจารณาคำขอ</h2>
-            <ol className="mt-3 space-y-3 text-xs text-slate-600">
+          <section className="rounded-lg border border-[#E2E8F0] bg-white p-4">
+            <h2 className="text-sm font-semibold text-[#0F172A]">การพิจารณาคำขอ</h2>
+            <ol className="mt-3 space-y-3 text-xs text-[#475569]">
               <li className="flex gap-2">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 font-medium text-slate-800">1</span>
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EFF6FF] font-medium text-[#0F172A]">1</span>
                 หัวหน้างานส่งคำขอและเอกสาร
               </li>
               <li className="flex gap-2">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 font-medium text-slate-600">2</span>
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EFF6FF] font-medium text-[#475569]">2</span>
                 ฝ่ายบุคคลตรวจสอบสิทธิ์และหลักฐาน
               </li>
               <li className="flex gap-2">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100 font-medium text-slate-600">3</span>
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EFF6FF] font-medium text-[#475569]">3</span>
                 แจ้งผลการพิจารณาในเมนูติดตามสถานะ
               </li>
             </ol>
@@ -583,7 +578,7 @@ export default function HeadEmPage() {
         </aside>
       </div>
 
-      <footer className="mt-5 border-t border-slate-200 pt-3 text-xs text-slate-500">
+      <footer className="mt-5 border-t border-[#E2E8F0] pt-3 text-xs text-[#64748B]">
         หากพบข้อมูลสิทธิ์ไม่ถูกต้อง โปรดติดต่อฝ่ายบุคคลก่อนส่งคำขอ
       </footer>
     </div>

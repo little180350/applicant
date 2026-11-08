@@ -12,14 +12,14 @@ export default function Navs() {
 
     return (
         <>
-            <div className={`app-sidebar ${isCollapsed ? "app-sidebar--collapsed" : ""} sticky top-0 flex h-screen shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-slate-200 px-3 py-4 transition-[width] duration-300`}>
+            <div className={`app-sidebar ${isCollapsed ? "app-sidebar--collapsed" : ""} sticky top-0 flex h-screen shrink-0 flex-col overflow-x-hidden overflow-y-auto border-r border-[#E2E8F0] px-3 py-4 transition-[width] duration-300`}>
                 <div className={`flex items-center gap-3 ${isCollapsed ? "justify-center" : ""}`}>
                     <button
                         type="button"
                         aria-expanded={!isCollapsed}
                         aria-label={isCollapsed ? "ขยายแถบเมนู" : "ย่อแถบเมนู"}
                         onClick={() => setIsCollapsed((collapsed) => !collapsed)}
-                        className="shrink-0 cursor-pointer rounded p-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700"
+                        className="shrink-0 cursor-pointer rounded p-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D4ED8]"
                     >
                         <MenuHamburger1 size={35} />
                     </button>
@@ -69,26 +69,26 @@ export default function Navs() {
                                 aria-current={isSelected ? "page" : undefined}
                                 aria-label={label}
                                 title={isCollapsed ? label : undefined}
-                                className={`flex h-10 w-full cursor-pointer items-center rounded transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700 ${isCollapsed ? "justify-center" : "gap-2 px-2 text-left"} ${isSelected ? "bg-olive-50 text-olive-900" : "text-slate-700 hover:bg-slate-50"} max-md:justify-center max-md:gap-0 max-md:px-0`}
+                                className={`flex h-10 w-full cursor-pointer items-center rounded transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D4ED8] ${isCollapsed ? "justify-center" : "gap-2 px-2 text-left"} ${isSelected ? "bg-[#EFF6FF] text-olive-900" : "text-[#334155] hover:bg-[#F8FAFC]"} max-md:justify-center max-md:gap-0 max-md:px-0`}
                             >
                                 <Icon size={20} aria-hidden="true" /> {!isCollapsed && <span className="max-md:hidden">{label}</span>}
                             </Link>;
                         })}
                     </div>
                 </div>
-                <div className={`mt-auto flex min-h-[48px] shrink-0 items-center justify-between border-t border-slate-200 pt-3 font-IBMPlexSans text-sm ${isCollapsed ? "flex-col justify-center gap-3" : ""} max-md:flex-col max-md:justify-center max-md:gap-3`}>
+                <div className={`mt-auto flex min-h-[48px] shrink-0 items-center justify-between border-t border-[#E2E8F0] pt-3 font-IBMPlexSans text-sm ${isCollapsed ? "flex-col justify-center gap-3" : ""} max-md:flex-col max-md:justify-center max-md:gap-3`}>
                     <button
                         type="button"
                         aria-label="ออกจากระบบ"
                         title={isCollapsed ? "ออกจากระบบ" : undefined}
-                        className={`flex cursor-pointer items-center rounded px-2 py-1 text-slate-700 transition-colors hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive-700 ${isCollapsed ? "justify-center" : "gap-2"} max-md:justify-center`}
+                        className={`flex cursor-pointer items-center rounded px-2 py-1 text-[#334155] transition-colors hover:bg-[#F8FAFC] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D4ED8] ${isCollapsed ? "justify-center" : "gap-2"} max-md:justify-center`}
                     >
                         <i className="bi bi-box-arrow-right"></i>
                         {!isCollapsed && <span className="max-md:hidden">ออกจากระบบ</span>}
                     </button>
                     <Link href="/profile">
                         <div
-                            className={`flex items-center text-slate-600 ${isCollapsed ? "justify-center" : "gap-2"} max-md:justify-center`}
+                            className={`flex items-center text-[#475569] ${isCollapsed ? "justify-center" : "gap-2"} max-md:justify-center`}
                             title={isCollapsed ? "โปรไฟล์พนักงาน" : undefined}
                         >
                             <i className="bi bi-person-circle text-lg" aria-hidden="true"></i>

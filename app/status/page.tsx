@@ -64,9 +64,9 @@ const statusLabels: Record<RequestStatus, string> = {
 
 const statusStyles: Record<RequestStatus, string> = {
   pending: "bg-stone-100 text-stone-700",
-  approved: "bg-emerald-50 text-emerald-700",
+  approved: "bg-[#ECFDF5] text-[#166534]",
   draft: "bg-amber-50 text-amber-700",
-  rejected: "bg-red-50 text-red-700",
+  rejected: "bg-[#FEF2F2] text-[#DC2626]",
 };
 
 const tabs: { value: StatusFilter; label: string }[] = [
@@ -175,20 +175,17 @@ export default function StatusPage() {
   }
 
   return (
-    <div className="mx-auto max-w-[1500px] space-y-3 px-1 pb-8 text-sm text-neutral-800">
+    <div className="mx-auto max-w-[1500px] space-y-3 px-1 pb-8 text-sm text-[#0F172A]">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <div className="mb-1 text-xs text-neutral-400">
-            พื้นที่ของฉัน / การติดตาม
-          </div>
           <h1 className="text-xl font-semibold">ติดตามคำขอสวัสดิการ</h1>
-          <p className="mt-1 text-xs text-neutral-500">
+          <p className="mt-1 text-xs text-[#64748B]">
             ตรวจสอบรายการคำขอและดูขั้นตอนการอนุมัติของคุณ
           </p>
         </div>
         <Link
           href="/withdraw"
-          className="rounded bg-neutral-800 px-4 py-2 text-xs font-medium text-white transition hover:bg-neutral-700"
+          className='inline-flex min-h-10 items-center justify-center rounded-md bg-[#1D4ED8] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1E40AF] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D4ED8]'
         >
           ยื่นคำขอใหม่
         </Link>
@@ -198,7 +195,7 @@ export default function StatusPage() {
         <label className="flex h-10 min-w-0 flex-1 items-center gap-2 rounded border border-neutral-300 px-3 focus-within:border-neutral-500">
           <svg
             aria-hidden="true"
-            className="h-4 w-4 shrink-0 text-neutral-500"
+            className="h-4 w-4 shrink-0 text-[#64748B]"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -209,7 +206,7 @@ export default function StatusPage() {
           </svg>
           <input
             aria-label="ค้นหาคำขอสวัสดิการ"
-            className="w-full bg-transparent text-xs outline-none placeholder:text-neutral-400"
+            className="w-full bg-transparent text-xs outline-none placeholder:text-[#94A3B8]"
             onChange={(event) => setSearch(event.target.value)}
             placeholder="ค้นหาด้วยเลขที่คำขอ หรือชื่อสวัสดิการ"
             value={search}
@@ -235,8 +232,8 @@ export default function StatusPage() {
             onClick={() => setActiveTab(tab.value)}
             className={`shrink-0 rounded border px-3 py-1.5 text-xs transition ${
               activeTab === tab.value
-                ? "border-neutral-800 bg-neutral-800 text-white"
-                : "border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50"
+                ? "border-[#1D4ED8] bg-[#1D4ED8] text-white"
+                : "border-[#CBD5E1] bg-white text-[#334155] hover:bg-[#F8FAFC]"
             }`}
           >
             {tab.label} ({countForTab(tab.value)})
@@ -244,12 +241,12 @@ export default function StatusPage() {
         ))}
       </div>
 
-      <section className="rounded border border-neutral-200 bg-white p-3">
+      <section className="rounded border border-[#E2E8F0] bg-white p-3">
         <h2 className="mb-3 font-semibold">คำขอของฉัน</h2>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[760px] border-collapse text-left text-xs">
             <thead>
-              <tr className="bg-neutral-100 text-neutral-600">
+              <tr className="bg-[#EFF6FF] text-[#475569]">
                 <th className="px-3 py-2 font-medium">เลขที่คำขอ</th>
                 <th className="px-3 py-2 font-medium">ประเภท / วันที่ยื่น</th>
                 <th className="px-3 py-2 text-right font-medium">
@@ -268,14 +265,14 @@ export default function StatusPage() {
                     setSelectedId(request.id);
                     setShowCancelConfirmation(false);
                   }}
-                  className={`cursor-pointer border-b border-neutral-100 transition hover:bg-neutral-50 ${
-                    selectedRequest?.id === request.id ? "bg-neutral-50" : ""
+                  className={`cursor-pointer border-b border-[#E2E8F0] transition hover:bg-[#F8FAFC] ${
+                    selectedRequest?.id === request.id ? "bg-[#F8FAFC]" : ""
                   }`}
                 >
                   <td className="px-3 py-3 font-semibold">{request.id}</td>
                   <td className="px-3 py-3">
                     <div>{request.title}</div>
-                    <div className="mt-1 text-[11px] text-neutral-400">
+                    <div className="mt-1 text-[11px] text-[#94A3B8]">
                       {request.submittedAt}
                     </div>
                   </td>
@@ -289,7 +286,7 @@ export default function StatusPage() {
                       {statusLabels[request.status]}
                     </span>
                   </td>
-                  <td className="px-3 py-3 text-neutral-500">
+                  <td className="px-3 py-3 text-[#64748B]">
                     {request.status === "pending"
                       ? "รออนุมัติจากฝ่ายบุคคล"
                       : request.status === "approved"
@@ -301,7 +298,7 @@ export default function StatusPage() {
                       <Link
                         href="/withdraw"
                         onClick={(event) => event.stopPropagation()}
-                        className="whitespace-nowrap rounded border border-neutral-400 px-2 py-1 hover:bg-neutral-100"
+                        className="whitespace-nowrap rounded border border-neutral-400 px-2 py-1 hover:bg-[#EFF6FF]"
                       >
                         แก้ไขฉบับร่าง
                       </Link>
@@ -313,12 +310,12 @@ export default function StatusPage() {
                           setSelectedId(request.id);
                           setShowCancelConfirmation(true);
                         }}
-                        className="whitespace-nowrap rounded border border-neutral-400 px-2 py-1 hover:bg-neutral-100"
+                        className="whitespace-nowrap rounded border border-neutral-400 px-2 py-1 hover:bg-[#EFF6FF]"
                       >
                         ยกเลิกคำขอ
                       </button>
                     ) : (
-                      <span className="whitespace-nowrap text-neutral-400">
+                      <span className="whitespace-nowrap text-[#94A3B8]">
                         ยกเลิกไม่ได้
                       </span>
                     )}
@@ -328,7 +325,7 @@ export default function StatusPage() {
               {filteredRequests.length === 0 && (
                 <tr>
                   <td
-                    className="px-3 py-8 text-center text-neutral-500"
+                    className="px-3 py-8 text-center text-[#64748B]"
                     colSpan={6}
                   >
                     ไม่พบรายการคำขอสวัสดิการ
@@ -338,20 +335,20 @@ export default function StatusPage() {
             </tbody>
           </table>
         </div>
-        <div className="flex justify-between pt-3 text-[11px] text-neutral-400">
+        <div className="flex justify-between pt-3 text-[11px] text-[#94A3B8]">
           <span>แสดง {filteredRequests.length} จาก {requests.length} รายการ</span>
           <span>หน้า 1 / 1</span>
         </div>
       </section>
 
       {selectedRequest && (
-        <section className="rounded border border-neutral-200 bg-white p-3">
-          <div className="flex flex-wrap items-start justify-between gap-3 border-b border-neutral-200 pb-3">
+        <section className="rounded border border-[#E2E8F0] bg-white p-3">
+          <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[#E2E8F0] pb-3">
             <div>
               <h2 className="font-semibold">
                 รายละเอียดคำขอ {selectedRequest.id}
               </h2>
-              <p className="mt-2 text-xs text-neutral-500">
+              <p className="mt-2 text-xs text-[#64748B]">
                 {selectedRequest.title} · ยื่นเมื่อ {selectedRequest.submittedAt}{" "}
                 เวลา 09:15 น.
               </p>
@@ -364,32 +361,32 @@ export default function StatusPage() {
           </div>
 
           <div className="grid gap-5 pt-4 md:grid-cols-[minmax(190px,0.8fr)_2fr]">
-            <div className="space-y-4 md:border-r md:border-neutral-200 md:pr-5">
+            <div className="space-y-4 md:border-r md:border-[#E2E8F0] md:pr-5">
               <div>
-                <p className="text-xs text-neutral-500">จำนวนเงินที่ขอเบิก</p>
+                <p className="text-xs text-[#64748B]">จำนวนเงินที่ขอเบิก</p>
                 <p className="mt-1 text-2xl font-semibold">
                   {formatAmount(selectedRequest.amount)} บาท
                 </p>
               </div>
               <div className="space-y-1 text-xs">
-                <p className="text-neutral-500">พนักงาน</p>
+                <p className="text-[#64748B]">พนักงาน</p>
                 <p className="font-medium">คุณสมชาย ใจดี · EMP-1024</p>
               </div>
               <div className="space-y-1 text-xs">
-                <p className="text-neutral-500">วันที่ใช้บริการ</p>
+                <p className="text-[#64748B]">วันที่ใช้บริการ</p>
                 <p className="font-medium">{selectedRequest.submittedAt}</p>
               </div>
               <div className="space-y-1 text-xs">
-                <p className="text-neutral-500">รายละเอียดคำขอ</p>
+                <p className="text-[#64748B]">รายละเอียดคำขอ</p>
                 <p className="leading-5">{selectedRequest.description}</p>
-                <p className="text-neutral-500">คลินิกสุขใจ · ใบเสร็จเลขที่ S-1026-128</p>
+                <p className="text-[#64748B]">คลินิกสุขใจ · ใบเสร็จเลขที่ S-1026-128</p>
               </div>
-              <div className="border-t border-neutral-200 pt-3 text-xs">
+              <div className="border-t border-[#E2E8F0] pt-3 text-xs">
                 <p className="mb-2 font-medium">เอกสารแนบ 2 ไฟล์</p>
-                <button type="button" className="block text-left text-neutral-600 underline">
+                <button type="button" className="block text-left text-[#475569] underline">
                   ใบเสร็จ_คลินิกสุขใจ.pdf · ดูไฟล์
                 </button>
-                <button type="button" className="mt-1 block text-left text-neutral-600 underline">
+                <button type="button" className="mt-1 block text-left text-[#475569] underline">
                   ใบรับรองแพทย์.pdf · ดูไฟล์
                 </button>
               </div>
@@ -404,10 +401,10 @@ export default function StatusPage() {
                       <span
                         className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] ${
                           step.complete
-                            ? "bg-neutral-200 text-neutral-700"
+                            ? "bg-neutral-200 text-[#334155]"
                             : index === 1
                               ? "bg-neutral-800 text-white"
-                              : "bg-neutral-100 text-neutral-500"
+                              : "bg-[#EFF6FF] text-[#64748B]"
                         }`}
                       >
                         {step.complete ? "✓" : index + 1}
@@ -419,21 +416,21 @@ export default function StatusPage() {
                     <div className="flex min-w-0 flex-1 justify-between gap-3 pb-3">
                       <div>
                         <p className="font-medium">{step.title}</p>
-                        <p className="mt-1 text-xs text-neutral-500">
+                        <p className="mt-1 text-xs text-[#64748B]">
                           {step.description}
                         </p>
-                        <p className="mt-1 text-[11px] text-neutral-400">
+                        <p className="mt-1 text-[11px] text-[#94A3B8]">
                           {step.date}
                         </p>
                       </div>
-                      <span className="shrink-0 pt-1 text-[11px] text-neutral-400">
+                      <span className="shrink-0 pt-1 text-[11px] text-[#94A3B8]">
                         {step.state}
                       </span>
                     </div>
                   </li>
                 ))}
               </ol>
-              <p className="mt-1 text-[11px] text-neutral-400">
+              <p className="mt-1 text-[11px] text-[#94A3B8]">
                 กรุณารอการดำเนินการตามขั้นตอน โดยปกติใช้เวลาประมาณ 3–5 วันทำการ
               </p>
             </div>
@@ -459,7 +456,7 @@ export default function StatusPage() {
             <h2 id="cancel-request-title" className="text-base font-semibold">
               ยืนยันการยกเลิกคำขอ
             </h2>
-            <p className="mt-2 text-sm text-neutral-600">
+            <p className="mt-2 text-sm text-[#475569]">
               ต้องการยกเลิกคำขอ {selectedRequest.id} ใช่หรือไม่?
               เมื่อยืนยันแล้ว คำขอนี้จะถูกนำออกจากรายการติดตาม
             </p>
@@ -468,7 +465,7 @@ export default function StatusPage() {
                 type="button"
                 autoFocus
                 onClick={() => setShowCancelConfirmation(false)}
-                className="rounded border border-neutral-300 px-3 py-2 text-xs hover:bg-neutral-50"
+                className="rounded border border-neutral-300 px-3 py-2 text-xs hover:bg-[#F8FAFC]"
               >
                 กลับ
               </button>

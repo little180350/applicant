@@ -59,7 +59,7 @@ const departments: Department[] = [
 
 function PersonIcon() {
   return (
-    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-500">
+    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#EFF6FF] text-[#64748B]">
       <svg
         aria-hidden="true"
         className="h-4 w-4"
@@ -112,20 +112,17 @@ export default function OrganizationPage() {
     departments[0];
 
   return (
-    <div className="mx-auto max-w-[1500px] space-y-4 px-1 pb-8 text-sm text-neutral-800">
+    <div className="mx-auto max-w-[1500px] space-y-4 px-1 pb-8 text-sm text-[#0F172A]">
       <div>
-        <div className="mb-1 text-xs text-neutral-400">
-          พนักงาน / โครงสร้างองค์กร
-        </div>
         <h1 className="text-xl font-semibold">โครงสร้างองค์กร</h1>
-        <p className="mt-1 text-xs text-neutral-500">
+        <p className="mt-1 text-xs text-[#64748B]">
           ดูโครงสร้างแต่ละฝ่ายและรายชื่อเพื่อนร่วมงานในฝ่ายการตลาดของคุณ
         </p>
       </div>
 
-      <aside className="flex flex-wrap items-center justify-between gap-3 rounded border border-neutral-200 bg-white p-3">
+      <aside className="flex flex-wrap items-center justify-between gap-3 rounded border border-[#E2E8F0] bg-white p-3">
         <div className="flex items-center gap-3">
-          <span className="text-neutral-600">
+          <span className="text-[#475569]">
             <svg
               aria-hidden="true"
               className="h-5 w-5"
@@ -142,28 +139,28 @@ export default function OrganizationPage() {
             <h2 className="text-xs font-semibold">
               เห็นรายชื่อเฉพาะพนักงานในแผนกเดียวกัน
             </h2>
-            <p className="mt-1 text-[11px] text-neutral-500">
+            <p className="mt-1 text-[11px] text-[#64748B]">
               เข้าถึงข้อมูลเฉพาะเพื่อนร่วมแผนกของคุณ
               โปรดไม่เปิดเผยชื่อ ตำแหน่ง หรือรหัสพนักงาน
             </p>
           </div>
         </div>
-        <span className="rounded bg-neutral-100 px-2 py-1 text-[11px] text-neutral-600">
+        <span className="rounded bg-[#EFF6FF] px-2 py-1 text-[11px] text-[#475569]">
           ฝ่ายการตลาด
         </span>
       </aside>
 
-      <section className="rounded border border-neutral-200 bg-white p-4">
+      <section className="rounded border border-[#E2E8F0] bg-white p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="font-semibold">โครงสร้างระดับฝ่าย</h2>
-          <span className="rounded border border-neutral-200 px-2 py-1 text-[11px] text-neutral-500">
+          <span className="rounded border border-[#E2E8F0] px-2 py-1 text-[11px] text-[#64748B]">
             โครงสร้างตัวอย่าง · ข้อมูลจำลอง
           </span>
         </div>
 
-        <div className="mx-auto mt-4 max-w-xs rounded border border-neutral-200 bg-neutral-50 px-4 py-3 text-center">
+        <div className="mx-auto mt-4 max-w-xs rounded border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-center">
           <p className="text-xs font-semibold">องค์กร</p>
-          <p className="mt-1 text-[11px] text-neutral-500">หน่วยงานระดับฝ่าย</p>
+          <p className="mt-1 text-[11px] text-[#64748B]">หน่วยงานระดับฝ่าย</p>
         </div>
 
         <div className="relative mt-7 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -179,21 +176,21 @@ export default function OrganizationPage() {
                 onClick={() => setSelectedDepartmentId(department.id)}
                 className={`relative min-h-[112px] rounded border p-3 text-left transition ${
                   isSelected
-                    ? "border-neutral-500 bg-neutral-100"
-                    : "border-neutral-200 bg-white hover:bg-neutral-50"
+                    ? "border-[#1D4ED8] bg-[#EFF6FF]"
+                    : "border-[#E2E8F0] bg-white hover:bg-[#F8FAFC]"
                 }`}
               >
                 <span
                   aria-hidden="true"
-                  className="absolute -top-4 left-1/2 h-4 border-l border-neutral-200"
+                  className="absolute -top-4 left-1/2 h-4 border-l border-[#E2E8F0]"
                 />
                 <span className="block text-xs font-semibold">
                   {department.name}
                 </span>
-                <span className="mt-2 block text-[11px] text-neutral-500">
+                <span className="mt-2 block text-[11px] text-[#64748B]">
                   {department.summary}
                 </span>
-                <span className="mt-2 flex items-center gap-2 border-t border-neutral-200 pt-2 text-[11px] text-neutral-600">
+                <span className="mt-2 flex items-center gap-2 border-t border-[#E2E8F0] pt-2 text-[11px] text-[#475569]">
                   <DepartmentIcon locked={!isOwnDepartment} />
                   {isOwnDepartment
                     ? "แผนกของฉัน · ดูรายชื่อได้"
@@ -203,29 +200,29 @@ export default function OrganizationPage() {
             );
           })}
         </div>
-        <p className="mt-3 text-[11px] text-neutral-400">
+        <p className="mt-3 text-[11px] text-[#94A3B8]">
           เลือกแผนกเพื่อดูข้อมูลฝ่าย · ข้อมูลในส่วนอื่นแสดงเฉพาะระดับฝ่าย
         </p>
       </section>
 
-      <section className="rounded border border-neutral-200 bg-white p-4">
+      <section className="rounded border border-[#E2E8F0] bg-white p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="font-semibold">
             {selectedDepartment.name}
           </h2>
-          <span className="rounded bg-neutral-100 px-2 py-1 text-[11px] text-neutral-600">
+          <span className="rounded bg-[#EFF6FF] px-2 py-1 text-[11px] text-[#475569]">
             {isOwnDepartment ? "แสดงรายชื่อภายในฝ่าย" : "แสดงเฉพาะตำแหน่ง"}
           </span>
         </div>
 
-        <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded border border-neutral-200 bg-neutral-50 p-3">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded border border-[#E2E8F0] bg-[#F8FAFC] p-3">
           <div className="flex items-center gap-3">
             <PersonIcon />
             <div>
               <p className="text-xs font-semibold">
                 {isOwnDepartment ? "มานา วิวัฒนกุล" : "ผู้จัดการฝ่าย"}
               </p>
-              <p className="mt-1 text-[11px] text-neutral-500">
+              <p className="mt-1 text-[11px] text-[#64748B]">
                 {isOwnDepartment
                   ? `ผู้จัดการ${selectedDepartment.name} · ผู้บังคับบัญชาของคุณ`
                   : `ผู้จัดการ${selectedDepartment.name}`}
@@ -233,7 +230,7 @@ export default function OrganizationPage() {
             </div>
           </div>
           {isOwnDepartment && (
-            <span className="rounded border border-neutral-200 bg-white px-2 py-1 text-[11px]">
+            <span className="rounded border border-[#E2E8F0] bg-white px-2 py-1 text-[11px]">
               ผู้จัดการฝ่าย
             </span>
           )}
@@ -242,7 +239,7 @@ export default function OrganizationPage() {
         <div className="mt-3 overflow-x-auto">
           <table className="w-full min-w-[560px] border-collapse text-left text-xs">
             <thead>
-              <tr className="bg-neutral-100 text-neutral-600">
+              <tr className="bg-[#EFF6FF] text-[#475569]">
                 {isOwnDepartment ? (
                   <>
                     <th className="px-3 py-2 font-medium">พนักงานในฝ่าย</th>
@@ -258,9 +255,9 @@ export default function OrganizationPage() {
               {selectedDepartment.employees.map((employee) => (
                 <tr
                   key={employee.role}
-                  className={`border-b border-neutral-100 ${
+                  className={`border-b border-[#E2E8F0] ${
                     isOwnDepartment && employee.isCurrentUser
-                      ? "bg-neutral-50"
+                      ? "bg-[#F8FAFC]"
                       : ""
                   }`}
                 >
@@ -272,23 +269,23 @@ export default function OrganizationPage() {
                           <span className="font-medium">{employee.name}</span>
                         </div>
                       </td>
-                      <td className="px-3 py-2.5 text-neutral-500">
+                      <td className="px-3 py-2.5 text-[#64748B]">
                         {employee.role}
                       </td>
                       <td className="px-3 py-2.5 text-right">
                         {employee.isCurrentUser ? (
-                          <span className="rounded bg-neutral-100 px-2 py-1 text-neutral-600">
+                          <span className="rounded bg-[#EFF6FF] px-2 py-1 text-[#475569]">
                             คุณ
                           </span>
                         ) : (
-                          <span className="rounded border border-neutral-200 px-2 py-1 text-neutral-500">
+                          <span className="rounded border border-[#E2E8F0] px-2 py-1 text-[#64748B]">
                             ข้อมูลจำลอง
                           </span>
                         )}
                       </td>
                     </>
                   ) : (
-                    <td className="px-3 py-2.5 text-neutral-600">
+                    <td className="px-3 py-2.5 text-[#475569]">
                       {employee.role}
                     </td>
                   )}
@@ -297,14 +294,14 @@ export default function OrganizationPage() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-[11px] text-neutral-400">
+        <p className="mt-3 text-[11px] text-[#94A3B8]">
           {isOwnDepartment
             ? "รายชื่อและตำแหน่งพนักงานเป็นข้อมูลจำลองเพื่อแสดงตัวอย่างภายในฝ่ายเดียวกัน"
             : "เพื่อความเป็นส่วนตัว จะแสดงเฉพาะตำแหน่งโดยไม่เปิดเผยรายชื่อพนักงาน"}
         </p>
       </section>
 
-      <div className="flex flex-wrap justify-between gap-2 px-1 text-[11px] text-neutral-400">
+      <div className="flex flex-wrap justify-between gap-2 px-1 text-[11px] text-[#94A3B8]">
         <span>แบบจำลองโครงสร้าง UX · ข้อมูลจำลอง · ไม่ใช่ข้อมูลส่วนบุคคลจริง</span>
         <span>อัปเดต 2569</span>
       </div>
